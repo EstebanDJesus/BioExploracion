@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temas - BioExplora</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    .categoria-card {
+      transition: all 0.4s ease;
+    }
+
+    .categoria-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- NAVBAR (copia el de arriba) -->
+  <nav class="bg-slate-900/95 backdrop-blur-md fixed w-full z-50 border-b border-emerald-900">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="../index.html" class="flex items-center gap-3 text-2xl font-bold">
+        <i class="fa-solid fa-dna text-emerald-500"></i>
+        <span>Bio<span class="text-emerald-500">Explora</span></span>
+      </a>
+
+      <div class="hidden md:flex gap-8 text-lg font-medium items-center">
+        <a href="../index.html" class="nav-link">Inicio</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+
+        <!-- MENÚ DESPLEGABLE DE TEMAS -->
+        <div class="relative group">
+          <button class="nav-link flex items-center gap-1 text-emerald-500 hover:text-emerald-400">
+            Temas
+            <i class="fa-solid fa-chevron-down text-sm transition-transform group-hover:rotate-180"></i>
+          </button>
+
+          <!-- Dropdown -->
+          <div class="absolute hidden group-hover:block pt-4 w-80 z-50">
+            <div
+              class="bg-slate-900 border border-emerald-800 rounded-3xl shadow-2xl p-6 text-sm max-h-[85vh] overflow-auto">
+
+              <div class="space-y-8">
+                <!-- Categoría 1 -->
+                <div>
+                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-heart-pulse"></i> Sistemas del Cuerpo Humano
+                  </h4>
+                  <ul class="space-y-2 pl-6 text-slate-300">
+                    <li><a href="temas.html" class="hover:text-white">Sistema Digestivo</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Sistema Circulatorio</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Sistema Respiratorio</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Aparato Urinario</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Sistema Óseo</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Sistema Nervioso</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Impulso Nervioso</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Sistema Endocrino</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Sistema Exocrino</a></li>
+                  </ul>
+                </div>
+
+                <!-- Categoría 2 -->
+                <div>
+                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-leaf"></i> Plantas y Fotosíntesis
+                  </h4>
+                  <ul class="space-y-2 pl-6 text-slate-300">
+                    <li><a href="temas.html" class="hover:text-white">Estructura de las Plantas</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Fotosíntesis</a></li>
+                  </ul>
+                </div>
+
+                <!-- Categoría 3 -->
+                <div>
+                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-apple-whole"></i> Nutrición y Alimentos
+                  </h4>
+                  <ul class="space-y-2 pl-6 text-slate-300">
+                    <li><a href="temas.html" class="hover:text-white">Minerales y Vitaminas en los Alimentos</a></li>
+                  </ul>
+                </div>
+
+                <!-- Categoría 4 -->
+                <div>
+                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-earth-americas"></i> Ecología y Medio Ambiente
+                  </h4>
+                  <ul class="space-y-2 pl-6 text-slate-300">
+                    <li><a href="temas.html" class="hover:text-white">Ecosistemas y Cadenas Tróficas</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Biomas de Venezuela</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Ciclos Biogeoquímicos</a></li>
+                    <li><a href="temas.html" class="hover:text-white">Balance Hídrico y Ciclo del Agua</a></li>
+                  </ul>
+                </div>
+
+                <!-- Categoría 5 -->
+                <div>
+                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> Recursos y Energía
+                  </h4>
+                  <ul class="space-y-2 pl-6 text-slate-300">
+                    <li><a href="temas.html" class="hover:text-white">Biomasa como Combustible</a></li>
+                  </ul>
+                </div>
+
+                <!-- Categoría 6 -->
+                <div>
+                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved"></i> Control Biológico
+                  </h4>
+                  <ul class="space-y-2 pl-6 text-slate-300">
+                    <li><a href="temas.html" class="hover:text-white">Biocontroladores</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="laboratorios.html" class="nav-link">Laboratorios</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-3xl text-emerald-400">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="pt-28 pb-20 max-w-7xl mx-auto px-6">
+    <h1 class="text-5xl font-bold text-center mb-4" data-aos="fade-up">Áreas de Biología</h1>
+    <p class="text-xl text-slate-400 text-center mb-16" data-aos="fade-up" data-aos-delay="100">
+      Explora los temas organizados por categoría
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Categoría 1 -->
+      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up">
+        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-heart-pulse"></i> Sistemas del Cuerpo Humano
+        </h3>
+        <ul class="space-y-3 text-slate-300">
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Digestivo</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Circulatorio</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Respiratorio</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Aparato Urinario</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Óseo</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Nervioso e Impulso
+              Nervioso</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Endocrino y Exocrino</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Categoría 2 -->
+      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
+        data-aos-delay="100">
+        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-leaf"></i> Plantas y Fotosíntesis
+        </h3>
+        <ul class="space-y-3 text-slate-300">
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Estructura de las Plantas</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Fotosíntesis</a></li>
+        </ul>
+      </div>
+
+      <!-- Categoría 3 -->
+      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
+        data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-apple-whole"></i> Nutrición y Alimentos
+        </h3>
+        <ul class="space-y-3 text-slate-300">
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Minerales y Vitaminas en los
+              Alimentos</a></li>
+        </ul>
+      </div>
+
+      <!-- Categoría 4 -->
+      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up">
+        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-earth-americas"></i> Ecología y Medio Ambiente
+        </h3>
+        <ul class="space-y-3 text-slate-300">
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Ecosistemas y Cadenas Tróficas</a>
+          </li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Biomas de Venezuela</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Ciclos Biogeoquímicos</a></li>
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Balance Hídrico y Ciclo del
+              Agua</a></li>
+        </ul>
+      </div>
+
+      <!-- Categoría 5 -->
+      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
+        data-aos-delay="100">
+        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-bolt"></i> Recursos y Energía
+        </h3>
+        <ul class="space-y-3 text-slate-300">
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Biomasa como Combustible</a></li>
+        </ul>
+      </div>
+
+      <!-- Categoría 6 -->
+      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
+        data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-shield-halved"></i> Control Biológico
+        </h3>
+        <ul class="space-y-3 text-slate-300">
+          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Biocontroladores</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-slate-900 border-t border-emerald-900 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center text-slate-500">
+      <p>Proyecto BioExplora © 2026 - Colegio Santo Domingo de Guzmán</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 1000 });
+  </script>
+</body>
+
+</html>
