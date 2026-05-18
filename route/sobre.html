@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorios Virtuales - BioExploración</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar scrolled" id="navbar">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Bio<span>Exploración</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="temas.html">Temas</a></li>
+            <li><a href="laboratorios.html">Laboratorios</a></li>
+            <li><a href="sobre.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+    </nav>
+
+    <header class="labs-hero">
+        <h1>🧪 Laboratorios Virtuales</h1>
+        <p>Experimenta, observa y aprende con nuestras simulaciones interactivas. La ciencia cobra vida en tu pantalla.</p>
+    </header>
+
+    <!-- SECCIÓN: INTRODUCCIÓN A LABORATORIOS -->
+    <section class="section about-section">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;" class="animate-on-scroll">
+            <span class="section-label">Experiencias Interactivas</span>
+            <h2 style="font-size: 2.2rem; color: var(--color-primario); margin-bottom: 1.5rem;">Aprender Haciendo</h2>
+            <p style="font-size: 1.1rem; color: var(--color-texto-claro); line-height: 1.9;">
+                Los <strong>laboratorios virtuales</strong> son el corazón interactivo de BioExploración. 
+                Cada simulación te permitirá manipular variables, observar resultados en tiempo real y comprender 
+                conceptos complejos de forma intuitiva. <strong>No necesitas equipo de laboratorio real</strong> — 
+                solo tu curiosidad y una pantalla.
+            </p>
+            <div style="display: inline-flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center;">
+                <span style="background: var(--color-fondo-alt); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; color: var(--color-primario); font-weight: 500;">🖱️ 100% Interactivo</span>
+                <span style="background: var(--color-fondo-alt); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; color: var(--color-primario); font-weight: 500;">📊 Datos en Tiempo Real</span>
+                <span style="background: var(--color-fondo-alt); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; color: var(--color-primario); font-weight: 500;">🔄 Repetible Sin Límites</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CÓMO FUNCIONAN -->
+    <section class="section" style="background: var(--color-fondo);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">Guía de Uso</span>
+                <h2 class="section-title">¿Cómo Funcionan los Laboratorios?</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;" class="animate-on-scroll">
+                <div style="text-align: center; padding: 2rem 1rem; background: var(--color-blanco); border-radius: 16px; box-shadow: var(--sombra-suave);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-primario), var(--color-secundario)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">1</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Selecciona</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">Elige el laboratorio que quieres explorar de nuestra lista.</p>
+                </div>
+                <div style="text-align: center; padding: 2rem 1rem; background: var(--color-blanco); border-radius: 16px; box-shadow: var(--sombra-suave);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-primario), var(--color-secundario)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">2</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Lee</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">Revisa la introducción teórica y los objetivos del experimento.</p>
+                </div>
+                <div style="text-align: center; padding: 2rem 1rem; background: var(--color-blanco); border-radius: 16px; box-shadow: var(--sombra-suave);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-primario), var(--color-secundario)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">3</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Experimenta</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">Manipula variables, observa cambios y toma notas.</p>
+                </div>
+                <div style="text-align: center; padding: 2rem 1rem; background: var(--color-blanco); border-radius: 16px; box-shadow: var(--sombra-suave);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-primario), var(--color-secundario)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">4</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Concluye</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">Analiza resultados y conecta con la teoría estudiada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="labs-grid">
+
+        <div class="lab-card animate-on-scroll">
+            <div class="lab-card-header">
+                <h3>🔬 Microscopio Virtual</h3>
+                <p>Observación de células en 3D</p>
+            </div>
+            <div class="lab-card-body">
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; line-height: 1.7;">
+                    <strong>Objetivo:</strong> Explorar la estructura de células vegetales y animales con nuestro microscopio virtual. 
+                    Aumenta el zoom, identifica orgánulos y compara tipos celulares sin necesidad de un microscopio físico.
+                </p>
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; font-size: 0.95rem;">
+                    <strong>Conceptos clave:</strong> Membrana celular, citoplasma, núcleo, cloroplastos, pared celular, mitocondrias.
+                </p>
+                <ul>
+                    <li><i>✓</i> Célula vegetal (ej. cebolla)</li>
+                    <li><i>✓</i> Célula animal (ej. epitelial)</li>
+                    <li><i>✓</i> Identificación de orgánulos</li>
+                    <li><i>✓</i> Modo oscuro y claro</li>
+                    <li><i>✓</i> Comparativa lado a lado</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.8rem; background: var(--color-fondo); border-radius: 8px; font-size: 0.85rem; color: var(--color-texto-claro);">
+                    <strong>📎 Conexión:</strong> Tema "Estructura de las Plantas" y "Sistemas del Cuerpo Humano"
+                </div>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Iniciar Simulación
+                </a>
+            </div>
+        </div>
+
+        <div class="lab-card animate-on-scroll animate-delay-1">
+            <div class="lab-card-header">
+                <h3>🌿 Laboratorio de Fotosíntesis</h3>
+                <p>Simula el proceso paso a paso</p>
+            </div>
+            <div class="lab-card-body">
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; line-height: 1.7;">
+                    <strong>Objetivo:</strong> Controla la luz, el CO₂ y el agua para observar cómo una planta produce glucosa y oxígeno. 
+                    Visualiza las reacciones lumínicas y oscuras en tiempo real.
+                </p>
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; font-size: 0.95rem;">
+                    <strong>Conceptos clave:</strong> Clorofila, fotones, ATP, NADPH, ciclo de Calvin, glucosa, O₂.
+                </p>
+                <ul>
+                    <li><i>✓</i> Variables: luz, CO₂, agua</li>
+                    <li><i>✓</i> Reacción lumínica y oscura</li>
+                    <li><i>✓</i> Producción de O₂ y glucosa</li>
+                    <li><i>✓</i> Gráficos en tiempo real</li>
+                    <li><i>✓</i> Condiciones de estrés (sequía, sombra)</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.8rem; background: var(--color-fondo); border-radius: 8px; font-size: 0.85rem; color: var(--color-texto-claro);">
+                    <strong>📎 Conexión:</strong> Tema "Fotosíntesis" y "Plantas"
+                </div>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Iniciar Simulación
+                </a>
+            </div>
+        </div>
+
+        <div class="lab-card animate-on-scroll">
+            <div class="lab-card-header">
+                <h3>🫀 Simulador Digestivo</h3>
+                <p>Recorrido del sistema digestivo</p>
+            </div>
+            <div class="lab-card-body">
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; line-height: 1.7;">
+                    <strong>Objetivo:</strong> Sigue el recorrido de un alimento desde la boca hasta el intestino delgado. 
+                    Observa las enzimas, el pH y la absorción de nutrientes en cada etapa del proceso digestivo.
+                </p>
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; font-size: 0.95rem;">
+                    <strong>Conceptos clave:</strong> Enzimas (amilasa, pepsina, lipasa), pH gástrico, villos intestinales, absorción.
+                </p>
+                <ul>
+                    <li><i>✓</i> Boca, esófago, estómago</li>
+                    <li><i>✓</i> Enzimas y pH por órgano</li>
+                    <li><i>✓</i> Absorción de nutrientes</li>
+                    <li><i>✓</i> Modo interactivo 3D</li>
+                    <li><i>✓</i> Diferentes tipos de alimentos</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.8rem; background: var(--color-fondo); border-radius: 8px; font-size: 0.85rem; color: var(--color-texto-claro);">
+                    <strong>📎 Conexión:</strong> Tema "Sistema Digestivo" y "Nutrición"
+                </div>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Iniciar Simulación
+                </a>
+            </div>
+        </div>
+
+        <div class="lab-card animate-on-scroll animate-delay-1">
+            <div class="lab-card-header">
+                <h3>🌳 Ecosistema Virtual</h3>
+                <p>Cadenas tróficas y equilibrio</p>
+            </div>
+            <div class="lab-card-body">
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; line-height: 1.7;">
+                    <strong>Objetivo:</strong> Construye tu propio ecosistema. Añade productores, consumidores y descomponedores. 
+                    Observa cómo cambia la cadena alimentaria al modificar poblaciones y condiciones ambientales.
+                </p>
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; font-size: 0.95rem;">
+                    <strong>Conceptos clave:</strong> Cadenas tróficas, pirámides ecológicas, equilibrio, perturbaciones, biodiversidad.
+                </p>
+                <ul>
+                    <li><i>✓</i> Constructor de ecosistemas</li>
+                    <li><i>✓</i> Cadenas y redes tróficas</li>
+                    <li><i>✓</i> Pirámides ecológicas</li>
+                    <li><i>✓</i> Efecto de perturbaciones</li>
+                    <li><i>✓</i> Biomas venezolanos predefinidos</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.8rem; background: var(--color-fondo); border-radius: 8px; font-size: 0.85rem; color: var(--color-texto-claro);">
+                    <strong>📎 Conexión:</strong> Tema "Ecosistemas" y "Cadenas Tróficas"
+                </div>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Iniciar Simulación
+                </a>
+            </div>
+        </div>
+
+        <div class="lab-card animate-on-scroll">
+            <div class="lab-card-header">
+                <h3>💧 Ciclo del Agua</h3>
+                <p>Simulación del ciclo hidrológico</p>
+            </div>
+            <div class="lab-card-body">
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; line-height: 1.7;">
+                    <strong>Objetivo:</strong> Visualiza la evaporación, condensación, precipitación e infiltración. 
+                    Controla el clima y observa cómo afecta el balance hídrico del planeta y los ecosistemas locales.
+                </p>
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; font-size: 0.95rem;">
+                    <strong>Conceptos clave:</strong> Evaporación, transpiración, condensación, precipitación, escorrentía, acuíferos.
+                </p>
+                <ul>
+                    <li><i>✓</i> Evaporación y transpiración</li>
+                    <li><i>✓</i> Condensación y nubes</li>
+                    <li><i>✓</i> Precipitación e infiltración</li>
+                    <li><i>✓</i> Control de variables climáticas</li>
+                    <li><i>✓</i> Impacto del cambio climático</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.8rem; background: var(--color-fondo); border-radius: 8px; font-size: 0.85rem; color: var(--color-texto-claro);">
+                    <strong>📎 Conexión:</strong> Tema "Balance Hídrico" y "Ciclos Biogeoquímicos"
+                </div>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Iniciar Simulación
+                </a>
+            </div>
+        </div>
+
+        <div class="lab-card animate-on-scroll animate-delay-1">
+            <div class="lab-card-header">
+                <h3>🧬 Genética Básica</h3>
+                <p>Cruces genéticos virtuales</p>
+            </div>
+            <div class="lab-card-body">
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; line-height: 1.7;">
+                    <strong>Objetivo:</strong> Realiza cruces genéticos entre plantas y animales virtuales. 
+                    Aplica las leyes de Mendel y observa la herencia de características dominantes y recesivas.
+                </p>
+                <p style="color: var(--color-texto-claro); margin-bottom: 1rem; font-size: 0.95rem;">
+                    <strong>Conceptos clave:</strong> Genotipo, fenotipo, alelos, dominancia, segregación, distribución independiente.
+                </p>
+                <ul>
+                    <li><i>✓</i> Cruces monohíbridos</li>
+                    <li><i>✓</i> Cruces dihíbridos</li>
+                    <li><i>✓</i> Tablas de Punnett</li>
+                    <li><i>✓</i> Probabilidades y ratios</li>
+                    <li><i>✓</i> Herencia de enfermedades</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.8rem; background: var(--color-fondo); border-radius: 8px; font-size: 0.85rem; color: var(--color-texto-claro);">
+                    <strong>📎 Conexión:</strong> Tema "Genética" (próximamente en 2° año)
+                </div>
+                <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    Iniciar Simulación
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- SECCIÓN: PRÓXIMOS LABORATORIOS -->
+    <section class="section" style="background: var(--color-fondo);">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;" class="animate-on-scroll">
+            <span class="section-label">En Desarrollo</span>
+            <h2 style="font-size: 2.2rem; color: var(--color-primario); margin-bottom: 1.5rem;">🔮 Próximos Laboratorios</h2>
+            <p style="font-size: 1.1rem; color: var(--color-texto-claro); line-height: 1.9; margin-bottom: 2rem;">
+                Estamos trabajando en nuevas simulaciones para ampliar tu experiencia de aprendizaje.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                <div style="padding: 1.5rem; background: var(--color-blanco); border-radius: 16px; box-shadow: var(--sombra-suave); opacity: 0.7;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🫁</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Sistema Respiratorio</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">Simulación del intercambio de gases en los alveolos.</p>
+                </div>
+                <div style="padding: 1.5rem; background: var(--color-blanco); border-radius: 16px; box-shadow: var(--sombra-suave); opacity: 0.7;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🦠</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Bacterias y Antibióticos</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">Observa cómo las bacterias desarrollan resistencia.</p>
+                </div>
+                <div style="padding: 1.5rem; background: var(--color-blanco); border-radius: 16px; box-shadow: var(--sombra-suave); opacity: 0.7;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧠</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Neuronas y Sinapsis</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">Visualiza la transmisión del impulso nervioso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content animate-on-scroll">
+            <h2>¿Necesitas Ayuda con un Laboratorio?</h2>
+            <p>Si tienes dudas sobre cómo usar las simulaciones o quieres proponer un nuevo experimento virtual, escríbenos.</p>
+            <div class="cta-buttons">
+                <a href="contacto.html" class="btn btn-light">
+                    <i>✉️</i> Contactar al Equipo
+                </a>
+                <a href="temas.html" class="btn btn-gold">
+                    <i>📚</i> Ver Temas Relacionados
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Bio<span>Exploración</span></h3>
+                <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="temas.html">Temas</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BioExploración. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

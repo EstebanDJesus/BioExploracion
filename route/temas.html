@@ -1,240 +1,345 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temas - BioExplora</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-  <style>
-    .categoria-card {
-      transition: all 0.4s ease;
-    }
-
-    .categoria-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.25);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temas - BioExploración</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<body>
 
-<body class="bg-slate-950 text-slate-100">
+    <nav class="navbar scrolled" id="navbar">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Bio<span>Exploración</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="temas.html">Temas</a></li>
+            <li><a href="laboratorios.html">Laboratorios</a></li>
+            <li><a href="sobre.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+    </nav>
 
-  <!-- NAVBAR (copia el de arriba) -->
-  <nav class="bg-slate-900/95 backdrop-blur-md fixed w-full z-50 border-b border-emerald-900">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="../index.html" class="flex items-center gap-3 text-2xl font-bold">
-        <i class="fa-solid fa-dna text-emerald-500"></i>
-        <span>Bio<span class="text-emerald-500">Explora</span></span>
-      </a>
+    <header class="page-header">
+        <h1>Áreas de Biología</h1>
+        <p>Explora los temas organizados por categoría. Cada área contiene contenido detallado, infografías y recursos de aprendizaje.</p>
+    </header>
 
-      <div class="hidden md:flex gap-8 text-lg font-medium items-center">
-        <a href="../index.html" class="nav-link">Inicio</a>
-        <a href="sobre.html" class="nav-link">Sobre</a>
-
-        <!-- MENÚ DESPLEGABLE DE TEMAS -->
-        <div class="relative group">
-          <button class="nav-link flex items-center gap-1 text-emerald-500 hover:text-emerald-400">
-            Temas
-            <i class="fa-solid fa-chevron-down text-sm transition-transform group-hover:rotate-180"></i>
-          </button>
-
-          <!-- Dropdown -->
-          <div class="absolute hidden group-hover:block pt-4 w-80 z-50">
-            <div
-              class="bg-slate-900 border border-emerald-800 rounded-3xl shadow-2xl p-6 text-sm max-h-[85vh] overflow-auto">
-
-              <div class="space-y-8">
-                <!-- Categoría 1 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-heart-pulse"></i> Sistemas del Cuerpo Humano
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Sistema Digestivo</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Circulatorio</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Respiratorio</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Aparato Urinario</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Óseo</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Nervioso</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Impulso Nervioso</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Endocrino</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Exocrino</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 2 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-leaf"></i> Plantas y Fotosíntesis
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Estructura de las Plantas</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Fotosíntesis</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 3 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-apple-whole"></i> Nutrición y Alimentos
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Minerales y Vitaminas en los Alimentos</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 4 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-earth-americas"></i> Ecología y Medio Ambiente
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Ecosistemas y Cadenas Tróficas</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Biomas de Venezuela</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Ciclos Biogeoquímicos</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Balance Hídrico y Ciclo del Agua</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 5 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-bolt"></i> Recursos y Energía
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Biomasa como Combustible</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 6 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved"></i> Control Biológico
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Biocontroladores</a></li>
-                  </ul>
-                </div>
-              </div>
+    <!-- SECCIÓN: INTRODUCCIÓN A LOS TEMAS -->
+    <section class="section about-section">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;" class="animate-on-scroll">
+            <span class="section-label">Contenido en Desarrollo</span>
+            <h2 style="font-size: 2.2rem; color: var(--color-primario); margin-bottom: 1.5rem;">Un Viaje por el Conocimiento Biológico</h2>
+            <p style="font-size: 1.1rem; color: var(--color-texto-claro); line-height: 1.9;">
+                A continuación encontrarás las <strong>6 áreas principales</strong> de estudio que estamos elaborando. 
+                Cada sección incluirá: <strong>teoría explicada paso a paso</strong>, <strong>diagramas e infografías</strong>, 
+                <strong>datos curiosos</strong>, <strong>aplicaciones en la vida real</strong> y <strong>conexiones con otros temas</strong>. 
+                El contenido está siendo revisado por nuestro equipo docente para garantizar precisión académica.
+            </p>
+            <div style="display: inline-flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center;">
+                <span style="background: var(--color-fondo-alt); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; color: var(--color-primario); font-weight: 500;">📚 12 temas planificados</span>
+                <span style="background: var(--color-fondo-alt); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; color: var(--color-primario); font-weight: 500;">🎨 30+ infografías</span>
+                <span style="background: var(--color-fondo-alt); padding: 0.6rem 1.2rem; border-radius: 50px; font-size: 0.9rem; color: var(--color-primario); font-weight: 500;">🔬 Conexión con laboratorios</span>
             </div>
-          </div>
+        </div>
+    </section>
+
+    <main class="topics-categories">
+
+        <!-- SISTEMAS DEL CUERPO HUMANO -->
+        <div class="category-block animate-on-scroll" id="sistemas">
+            <div class="category-header">
+                <div class="category-icon">🫀</div>
+                <h3>Sistemas del Cuerpo Humano</h3>
+            </div>
+            <p style="color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.7;">
+                <strong>¿Qué encontrarás aquí?</strong> Un recorrido completo por las máquinas biológicas que mantienen nuestro cuerpo funcionando. 
+                Desde cómo procesamos los alimentos hasta cómo enviamos señales eléctricas por todo el organismo. 
+                Cada sistema incluirá anatomía, fisiología, enfermedades relacionadas y consejos de salud.
+            </p>
+            <div class="category-topics">
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Sistema Digestivo</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Boca, esófago, estómago, intestinos. Proceso de digestión, enzimas y absorción de nutrientes.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Sistema Circulatorio</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Corazón, vasos sanguíneos, sangre. Transporte de oxígeno, nutrientes y defensas.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Sistema Respiratorio</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Pulmones, bronquios, alveolos. Intercambio de gases y mecanismo de la respiración.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Aparato Urinario</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Riñones, uréteres, vejiga. Filtración, reabsorción y eliminación de desechos.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Sistema Óseo</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Huesos, cartílagos, articulaciones. Estructura, crecimiento y reparación ósea.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Sistema Nervioso e Impulso Nervioso</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Cerebro, médula, neuronas. Transmisión de señales eléctricas y reflejos.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Sistema Endocrino y Exocrino</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Glándulas, hormonas, secreciones. Regulación química del cuerpo.</span>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-fondo); border-radius: 12px; border-left: 4px solid var(--color-acento);">
+                <p style="font-size: 0.95rem; color: var(--color-texto-claro); margin: 0;">
+                    <strong style="color: var(--color-primario);">📌 Nota:</strong> Este contenido está siendo elaborado por el equipo de 1° año. 
+                    Se espera incluir ilustraciones anatómicas, comparaciones entre sistemas y datos de aplicación médica.
+                </p>
+            </div>
         </div>
 
-        <a href="laboratorios.html" class="nav-link">Laboratorios</a>
-        <a href="contacto.html" class="nav-link">Contacto</a>
-      </div>
+        <!-- PLANTAS Y FOTOSÍNTESIS -->
+        <div class="category-block animate-on-scroll" id="plantas">
+            <div class="category-header">
+                <div class="category-icon">🌱</div>
+                <h3>Plantas y Fotosíntesis</h3>
+            </div>
+            <p style="color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.7;">
+                <strong>¿Qué encontrarás aquí?</strong> Todo sobre el reino vegetal: desde la estructura microscópica de una célula vegetal 
+                hasta los bosques tropicales de Venezuela. La fotosíntesis explicada como un proceso químico mágico que sustenta la vida en la Tierra.
+            </p>
+            <div class="category-topics">
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Estructura de las Plantas</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Raíz, tallo, hojas, flores. Tejidos vegetales y adaptaciones al medio ambiente.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Fotosíntesis</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Reacciones lumínica y oscura. Cloroplastos, clorofila, producción de glucosa y O₂.</span>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-fondo); border-radius: 12px; border-left: 4px solid var(--color-acento);">
+                <p style="font-size: 0.95rem; color: var(--color-texto-claro); margin: 0;">
+                    <strong style="color: var(--color-primario);">📌 Nota:</strong> Incluirá conexión con el laboratorio virtual de fotosíntesis 
+                    y ejemplos de flora venezolana (orquídeas, frailejones, árboles de la selva amazónica).
+                </p>
+            </div>
+        </div>
 
-      <button id="menu-btn" class="md:hidden text-3xl text-emerald-400">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  </nav>
+        <!-- NUTRICIÓN Y ALIMENTOS -->
+        <div class="category-block animate-on-scroll" id="nutricion">
+            <div class="category-header">
+                <div class="category-icon">🥗</div>
+                <h3>Nutrición y Alimentos</h3>
+            </div>
+            <p style="color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.7;">
+                <strong>¿Qué encontrarás aquí?</strong> La ciencia detrás de lo que comemos. Descompondrás los alimentos en sus componentes 
+                esenciales y entenderás por qué una dieta balanceada es fundamental para la salud.
+            </p>
+            <div class="category-topics">
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Minerales y Vitaminas en los Alimentos</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Funciones de cada micronutriente, fuentes naturales, deficiencias y excesos. Tablas comparativas.</span>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-fondo); border-radius: 12px; border-left: 4px solid var(--color-acento);">
+                <p style="font-size: 0.95rem; color: var(--color-texto-claro); margin: 0;">
+                    <strong style="color: var(--color-primario);">📌 Nota:</strong> Se planea incluir una guía de alimentos venezolanos 
+                    (cambur, caraota, queso, pescado) y su valor nutricional específico.
+                </p>
+            </div>
+        </div>
 
-  <div class="pt-28 pb-20 max-w-7xl mx-auto px-6">
-    <h1 class="text-5xl font-bold text-center mb-4" data-aos="fade-up">Áreas de Biología</h1>
-    <p class="text-xl text-slate-400 text-center mb-16" data-aos="fade-up" data-aos-delay="100">
-      Explora los temas organizados por categoría
-    </p>
+        <!-- ECOLOGÍA Y MEDIO AMBIENTE -->
+        <div class="category-block animate-on-scroll" id="ecologia">
+            <div class="category-header">
+                <div class="category-icon">🌳</div>
+                <h3>Ecología y Medio Ambiente</h3>
+            </div>
+            <p style="color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.7;">
+                <strong>¿Qué encontrarás aquí?</strong> La relación entre los seres vivos y su entorno. Desde un estanque local 
+                hasta los grandes biomas del planeta. Con especial énfasis en los ecosistemas venezolanos.
+            </p>
+            <div class="category-topics">
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Ecosistemas y Cadenas Tróficas</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Productores, consumidores, descomponedores. Redes alimentarias y flujo de energía.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Biomas de Venezuela</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Selva amazónica, Llanos, Andes, Delta del Orinoco, Cordillera de la Costa. Flora y fauna endémica.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Ciclos Biogeoquímicos</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Ciclos del carbono, nitrógeno, fósforo y azufre. Impacto humano en estos ciclos.</span>
+                </div>
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Balance Hídrico y Ciclo del Agua</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Evaporación, condensación, precipitación. Importancia del agua dulce en Venezuela.</span>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-fondo); border-radius: 12px; border-left: 4px solid var(--color-acento);">
+                <p style="font-size: 0.95rem; color: var(--color-texto-claro); margin: 0;">
+                    <strong style="color: var(--color-primario);">📌 Nota:</strong> Contenido elaborado por 2° año. 
+                    Incluirá fotografías de campo, mapas interactivos y datos de conservación ambiental.
+                </p>
+            </div>
+        </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- RECURSOS Y ENERGÍA -->
+        <div class="category-block animate-on-scroll" id="recursos">
+            <div class="category-header">
+                <div class="category-icon">⚡</div>
+                <h3>Recursos y Energía</h3>
+            </div>
+            <p style="color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.7;">
+                <strong>¿Qué encontrarás aquí?</strong> Cómo la biología puede resolver problemas energéticos. 
+                Desde la biomasa como alternativa sostenible hasta la biotecnología aplicada a la producción de combustibles.
+            </p>
+            <div class="category-topics">
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Biomasa como Combustible</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Bioetanol, biodiésel, biogás. Producción a partir de residuos agrícolas. Ventajas y desventajas.</span>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-fondo); border-radius: 12px; border-left: 4px solid var(--color-acento);">
+                <p style="font-size: 0.95rem; color: var(--color-texto-claro); margin: 0;">
+                    <strong style="color: var(--color-primario);">📌 Nota:</strong> Se investigará el potencial de la caña de azúcar 
+                    y el aceite de palma venezolano como fuentes de biocombustibles.
+                </p>
+            </div>
+        </div>
 
-      <!-- Categoría 1 -->
-      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up">
-        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
-          <i class="fa-solid fa-heart-pulse"></i> Sistemas del Cuerpo Humano
-        </h3>
-        <ul class="space-y-3 text-slate-300">
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Digestivo</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Circulatorio</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Respiratorio</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Aparato Urinario</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Óseo</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Nervioso e Impulso
-              Nervioso</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Sistema Endocrino y Exocrino</a>
-          </li>
-        </ul>
-      </div>
+        <!-- CONTROL BIOLÓGICO -->
+        <div class="category-block animate-on-scroll" id="biocontrol">
+            <div class="category-header">
+                <div class="category-icon">🐞</div>
+                <h3>Control Biológico</h3>
+            </div>
+            <p style="color: var(--color-texto-claro); margin-bottom: 1.5rem; line-height: 1.7;">
+                <strong>¿Qué encontrarás aquí?</strong> Alternativas naturales a los pesticidas químicos. Cómo usar organismos vivos 
+                para controlar plagas agrícolas de manera sostenible y respetuosa con el medio ambiente.
+            </p>
+            <div class="category-topics">
+                <div class="topic-link-card" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i>→</i>
+                        <strong style="color: var(--color-primario);">Biocontroladores</strong>
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--color-texto-claro); padding-left: 1.5rem;">Mariquitas, avispas parasitoides, hongos entomopatógenos. Casos de éxito en agricultura venezolana.</span>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--color-fondo); border-radius: 12px; border-left: 4px solid var(--color-acento);">
+                <p style="font-size: 0.95rem; color: var(--color-texto-claro); margin: 0;">
+                    <strong style="color: var(--color-primario);">📌 Nota:</strong> Se entrevistará a agricultores que usan control biológico 
+                    en los Andes venezolanos para incluir testimonios reales.
+                </p>
+            </div>
+        </div>
 
-      <!-- Categoría 2 -->
-      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
-        data-aos-delay="100">
-        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
-          <i class="fa-solid fa-leaf"></i> Plantas y Fotosíntesis
-        </h3>
-        <ul class="space-y-3 text-slate-300">
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Estructura de las Plantas</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Fotosíntesis</a></li>
-        </ul>
-      </div>
+    </main>
 
-      <!-- Categoría 3 -->
-      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
-        data-aos-delay="200">
-        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
-          <i class="fa-solid fa-apple-whole"></i> Nutrición y Alimentos
-        </h3>
-        <ul class="space-y-3 text-slate-300">
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Minerales y Vitaminas en los
-              Alimentos</a></li>
-        </ul>
-      </div>
+    <!-- SECCIÓN: ESTADO DEL CONTENIDO -->
+    <section class="section stats-section">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="animate-on-scroll">
+            <h2 style="font-size: 2.2rem; color: var(--color-blanco); margin-bottom: 1rem;">📊 Estado del Contenido</h2>
+            <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 3rem;">
+                Así va nuestro progreso en la elaboración del material educativo.
+            </p>
+        </div>
+        <div class="stats-grid" style="max-width: 900px;">
+            <div class="stat-card animate-on-scroll">
+                <span style="font-size: 3rem; font-weight: 800; color: var(--color-acento-claro);">📝</span>
+                <span style="display: block; font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem;">Investigación</span>
+                <span style="font-size: 0.9rem; opacity: 0.9;">Recopilando fuentes bibliográficas y académicas</span>
+            </div>
+            <div class="stat-card animate-on-scroll animate-delay-1">
+                <span style="font-size: 3rem; font-weight: 800; color: var(--color-acento-claro);">🎨</span>
+                <span style="display: block; font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem;">Diseño</span>
+                <span style="font-size: 0.9rem; opacity: 0.9;">Creando infografías, diagramas y recursos visuales</span>
+            </div>
+            <div class="stat-card animate-on-scroll animate-delay-2">
+                <span style="font-size: 3rem; font-weight: 800; color: var(--color-acento-claro);">✅</span>
+                <span style="display: block; font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem;">Revisión</span>
+                <span style="font-size: 0.9rem; opacity: 0.9;">Verificación por el docente de Biología</span>
+            </div>
+        </div>
+    </section>
 
-      <!-- Categoría 4 -->
-      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up">
-        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
-          <i class="fa-solid fa-earth-americas"></i> Ecología y Medio Ambiente
-        </h3>
-        <ul class="space-y-3 text-slate-300">
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Ecosistemas y Cadenas Tróficas</a>
-          </li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Biomas de Venezuela</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Ciclos Biogeoquímicos</a></li>
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Balance Hídrico y Ciclo del
-              Agua</a></li>
-        </ul>
-      </div>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Bio<span>Exploración</span></h3>
+                <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="laboratorios.html">Laboratorios</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BioExploración. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-      <!-- Categoría 5 -->
-      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
-        data-aos-delay="100">
-        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
-          <i class="fa-solid fa-bolt"></i> Recursos y Energía
-        </h3>
-        <ul class="space-y-3 text-slate-300">
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Biomasa como Combustible</a></li>
-        </ul>
-      </div>
-
-      <!-- Categoría 6 -->
-      <div class="categoria-card bg-slate-900 border border-emerald-800 p-8 rounded-3xl" data-aos="fade-up"
-        data-aos-delay="200">
-        <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
-          <i class="fa-solid fa-shield-halved"></i> Control Biológico
-        </h3>
-        <ul class="space-y-3 text-slate-300">
-          <li><a href="temas.html" class="hover:text-emerald-400 transition-colors">→ Biocontroladores</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <footer class="bg-slate-900 border-t border-emerald-900 py-12">
-    <div class="max-w-7xl mx-auto px-6 text-center text-slate-500">
-      <p>Proyecto BioExplora © 2026 - Colegio Santo Domingo de Guzmán</p>
-    </div>
-  </footer>
-
-  <script src="../scripts/main.js"></script>
-  <script>
-    AOS.init({ once: true, duration: 1000 });
-  </script>
+    <script src="../scripts/script.js"></script>
 </body>
-
 </html>

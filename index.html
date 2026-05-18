@@ -1,216 +1,321 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BioExplora | Biología 1° y 2° Año</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-  <style>
-    .nav-link {
-      transition: all 0.4s ease;
-    }
-
-    .nav-link:hover {
-      color: #10b981;
-      transform: translateY(-2px);
-    }
-
-    .tema-card {
-      transition: all 0.4s ease;
-    }
-
-    .tema-card:hover {
-      transform: translateY(-10px);
-      background-color: #166534;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioExploración - Biología Viva y Fascinante</title>
+    <meta name="description" content="Proyecto escolar de Biología para 1° y 2° año. Explora los sistemas del cuerpo humano, plantas, ecosistemas y más.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<body>
 
-<body class="bg-slate-950 text-slate-100">
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Bio<span>Exploración</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="route/temas.html">Temas</a></li>
+            <li><a href="route/laboratorios.html">Laboratorios</a></li>
+            <li><a href="route/sobre.html">Sobre Nosotros</a></li>
+            <li><a href="route/contacto.html">Contacto</a></li>
+            <li><a href="route/temas.html" class="nav-cta">Explorar Temas</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+    </nav>
 
-  <!-- NAVBAR -->
-  <nav class="bg-slate-900/95 backdrop-blur-md fixed w-full z-50 border-b border-emerald-900">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="../index.html" class="flex items-center gap-3 text-2xl font-bold">
-        <i class="fa-solid fa-dna text-emerald-500"></i>
-        <span>Bio<span class="text-emerald-500">Explora</span></span>
-      </a>
-
-      <div class="hidden md:flex gap-8 text-lg font-medium items-center">
-        <a href="../index.html" class="nav-link">Inicio</a>
-        <a href="sobre.html" class="nav-link">Sobre</a>
-
-        <!-- MENÚ DESPLEGABLE DE TEMAS -->
-        <div class="relative group">
-          <button class="nav-link flex items-center gap-1 text-emerald-500 hover:text-emerald-400">
-            Temas
-            <i class="fa-solid fa-chevron-down text-sm transition-transform group-hover:rotate-180"></i>
-          </button>
-
-          <!-- Dropdown -->
-          <div class="absolute hidden group-hover:block pt-4 w-80 z-50">
-            <div
-              class="bg-slate-900 border border-emerald-800 rounded-3xl shadow-2xl p-6 text-sm max-h-[85vh] overflow-auto">
-
-              <div class="space-y-8">
-                <!-- Categoría 1 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-heart-pulse"></i> Sistemas del Cuerpo Humano
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Sistema Digestivo</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Circulatorio</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Respiratorio</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Aparato Urinario</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Óseo</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Nervioso</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Impulso Nervioso</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Endocrino</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Exocrino</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 2 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-leaf"></i> Plantas y Fotosíntesis
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Estructura de las Plantas</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Fotosíntesis</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 3 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-apple-whole"></i> Nutrición y Alimentos
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Minerales y Vitaminas en los Alimentos</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 4 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-earth-americas"></i> Ecología y Medio Ambiente
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Ecosistemas y Cadenas Tróficas</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Biomas de Venezuela</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Ciclos Biogeoquímicos</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Balance Hídrico y Ciclo del Agua</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 5 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-bolt"></i> Recursos y Energía
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Biomasa como Combustible</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 6 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved"></i> Control Biológico
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Biocontroladores</a></li>
-                  </ul>
-                </div>
-              </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🎓 Proyecto Escolar - 1° y 2° Año</div>
+            <h1>Biología <span class="highlight">Viva</span> y Fascinante</h1>
+            <p class="hero-subtitle">Explorando los sistemas del cuerpo humano, las plantas, los ecosistemas y mucho más. Un viaje interactivo por el mundo de la vida.</p>
+            <div class="hero-buttons">
+                <a href="route/temas.html" class="btn btn-primary">
+                    <i>🔬</i> Explorar Temas
+                </a>
+                <a href="route/laboratorios.html" class="btn btn-outline">
+                    <i>🧪</i> Laboratorios Virtuales
+                </a>
             </div>
-          </div>
         </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})"></div>
+        </div>
+    </section>
 
-        <a href="laboratorios.html" class="nav-link">Laboratorios</a>
-        <a href="contacto.html" class="nav-link">Contacto</a>
-      </div>
+    <!-- SECCIÓN: ¿QUÉ ES BIOEXPLORACIÓN? -->
+    <section class="section about-section" id="about">
+        <div class="about-grid">
+            <div class="about-image animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80" alt="Estudiantes explorando biología">
+            </div>
+            <div class="about-content animate-on-scroll animate-delay-2">
+                <span class="section-label">Sobre el Proyecto</span>
+                <h2>¿Qué es BioExploración?</h2>
+                <p>
+                    <strong>BioExploración</strong> es un proyecto educativo desarrollado por estudiantes de 
+                    <strong>1° y 2° año de Biología</strong> del Colegio Santo Domingo de Guzmán. Nuestro objetivo es 
+                    crear un espacio digital donde el aprendizaje de las ciencias biológicas sea 
+                    <strong>interactivo, visual y accesible</strong> para todos.
+                </p>
+                <p>
+                    A través de este sitio web, exploramos desde los <strong>sistemas del cuerpo humano</strong> 
+                    hasta los <strong>ecosistemas de Venezuela</strong>, pasando por la <strong>fotosíntesis</strong>, 
+                    la <strong>nutrición</strong> y el <strong>control biológico</strong>. Todo diseñado con 
+                    contenido riguroso pero presentado de manera clara y atractiva.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">📚</div>
+                        <div class="feature-text">
+                            <h4>Contenido Académico</h4>
+                            <p>Material basado en el programa oficial de Biología de 1° y 2° año.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🧪</div>
+                        <div class="feature-text">
+                            <h4>Laboratorios Virtuales</h4>
+                            <p>Simulaciones interactivas para experimentar sin riesgos.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <div class="feature-text">
+                            <h4>Diseño Visual</h4>
+                            <p>Infografías, diagramas y recursos visuales de alta calidad.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌍</div>
+                        <div class="feature-text">
+                            <h4>Enfoque Local</h4>
+                            <p>Especial atención a la biodiversidad venezolana y tropical.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <button id="menu-btn" class="md:hidden text-3xl text-emerald-400">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  </nav>
+    <!-- SECCIÓN: ESTADÍSTICAS -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-label">Áreas de Biología</span>
+            </div>
+            <div class="stat-card animate-on-scroll animate-delay-1">
+                <span class="stat-number" data-target="12">0</span>
+                <span class="stat-label">Temas Explorados</span>
+            </div>
+            <div class="stat-card animate-on-scroll animate-delay-2">
+                <span class="stat-number" data-target="5">0</span>
+                <span class="stat-label">Laboratorios Virtuales</span>
+            </div>
+            <div class="stat-card animate-on-scroll animate-delay-3">
+                <span class="stat-number" data-target="30">0</span>
+                <span class="stat-label">Estudiantes Participantes</span>
+            </div>
+        </div>
+    </section>
 
-  <!-- HERO - Estilo más limpio como el de SentiEco -->
-  <section
-    class="min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950 pt-16">
-    <div class="max-w-4xl px-6" data-aos="fade-up">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-        Biología<br><span class="text-emerald-500">Viva y Fascinante</span>
-      </h1>
-      <p class="text-xl md:text-2xl text-slate-300 mb-10">
-        Explorando los sistemas del cuerpo humano, las plantas, los ecosistemas y mucho más.
-      </p>
-      <a href="../route/temas.html"
-        class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 px-10 py-5 rounded-2xl text-xl font-semibold transition-all">
-        <i class="fa-solid fa-book-open"></i>
-        Explorar Todos los Temas
-      </a>
-    </div>
-  </section>
+    <!-- SECCIÓN: TEMAS DESTACADOS -->
+    <section class="section topics-section">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label">Explora el Conocimiento</span>
+            <h2 class="section-title">Temas Destacados</h2>
+            <p class="section-subtitle">Descubre los fascinantes mundos que hemos preparado para tu aprendizaje.</p>
+        </div>
+        <div class="topics-grid">
+            <div class="topic-card animate-on-scroll">
+                <div class="topic-image">🫀</div>
+                <div class="topic-content">
+                    <span class="topic-tag">1° Año</span>
+                    <h3>Sistemas del Cuerpo Humano</h3>
+                    <p>Explora el sistema digestivo, circulatorio, respiratorio, urinario, óseo, nervioso y endocrino.</p>
+                    <a href="route/temas.html#sistemas" class="topic-link">Ver temas <i>→</i></a>
+                </div>
+            </div>
+            <div class="topic-card animate-on-scroll animate-delay-1">
+                <div class="topic-image">🌱</div>
+                <div class="topic-content">
+                    <span class="topic-tag">1° Año</span>
+                    <h3>Plantas y Fotosíntesis</h3>
+                    <p>Conoce la estructura de las plantas y el proceso mágico de la fotosíntesis.</p>
+                    <a href="route/temas.html#plantas" class="topic-link">Ver temas <i>→</i></a>
+                </div>
+            </div>
+            <div class="topic-card animate-on-scroll animate-delay-2">
+                <div class="topic-image">🥗</div>
+                <div class="topic-content">
+                    <span class="topic-tag">1° Año</span>
+                    <h3>Nutrición y Alimentos</h3>
+                    <p>Minerales, vitaminas y la importancia de una alimentación balanceada.</p>
+                    <a href="route/temas.html#nutricion" class="topic-link">Ver temas <i>→</i></a>
+                </div>
+            </div>
+            <div class="topic-card animate-on-scroll">
+                <div class="topic-image">🌳</div>
+                <div class="topic-content">
+                    <span class="topic-tag">2° Año</span>
+                    <h3>Ecología y Medio Ambiente</h3>
+                    <p>Ecosistemas, cadenas tróficas, biomas de Venezuela y ciclos biogeoquímicos.</p>
+                    <a href="route/temas.html#ecologia" class="topic-link">Ver temas <i>→</i></a>
+                </div>
+            </div>
+            <div class="topic-card animate-on-scroll animate-delay-1">
+                <div class="topic-image">⚡</div>
+                <div class="topic-content">
+                    <span class="topic-tag">2° Año</span>
+                    <h3>Recursos y Energía</h3>
+                    <p>Biomasa como combustible y fuentes de energía renovables.</p>
+                    <a href="route/temas.html#recursos" class="topic-link">Ver temas <i>→</i></a>
+                </div>
+            </div>
+            <div class="topic-card animate-on-scroll animate-delay-2">
+                <div class="topic-image">🐞</div>
+                <div class="topic-content">
+                    <span class="topic-tag">2° Año</span>
+                    <h3>Control Biológico</h3>
+                    <p>Biocontroladores y métodos naturales de manejo de plagas.</p>
+                    <a href="route/temas.html#biocontrol" class="topic-link">Ver temas <i>→</i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- TEMAS DESTACADOS (Clicables) -->
-  <section class="py-20 px-6 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">Temas del Año</h2>
-    <p class="text-center text-slate-400 mb-12" data-aos="fade-up">Haz clic en cualquier tema para ver su contenido</p>
+    <!-- SECCIÓN: LABORATORIOS VIRTUALES PREVIEW -->
+    <section class="section labs-preview">
+        <div class="labs-container">
+            <div class="labs-content animate-on-scroll">
+                <span class="section-label">Aprende Haciendo</span>
+                <h2>Laboratorios Virtuales</h2>
+                <p>
+                    La biología se aprende mejor <strong>experimentando</strong>. Nuestros laboratorios virtuales 
+                    te permiten realizar simulaciones interactivas de experimentos reales, desde observar células 
+                    al microscopio hasta analizar cadenas alimentarias.
+                </p>
+                <ul class="labs-list">
+                    <li><i>🔬</i> Observación microscópica de células vegetales y animales</li>
+                    <li><i>🧫</i> Simulación de procesos digestivos</li>
+                    <li><i>🌿</i> Experimento virtual de fotosíntesis</li>
+                    <li><i>🦠</i> Análisis de ecosistemas y cadenas tróficas</li>
+                    <li><i>💧</i> Simulación del ciclo del agua</li>
+                </ul>
+                <a href="route/laboratorios.html" class="btn btn-primary">
+                    <i>🧪</i> Ir a Laboratorios
+                </a>
+            </div>
+            <div class="labs-visual animate-on-scroll animate-delay-2">
+                <div class="lab-card-float">
+                    <div class="lab-preview-icon">🔬</div>
+                    <h4>Microscopio Virtual</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem;">Explora el mundo celular en 3D</p>
+                </div>
+                <div class="lab-card-float">
+                    <div class="lab-preview-icon">🌿</div>
+                    <h4>Fotosíntesis Lab</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem;">Simula el proceso paso a paso</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- 1er Año -->
-      <a href="../route/temas.html"
-        class="tema-card bg-slate-900 p-8 rounded-3xl border border-emerald-900 hover:border-emerald-500">
-        <span class="inline-block px-4 py-1 bg-emerald-900 text-emerald-300 text-sm rounded-full mb-4">1° Año</span>
-        <h3 class="text-2xl font-semibold mb-6">Sistema Digestivo</h3>
-        <p class="text-slate-400 text-sm">• Estructura de las Plantas<br>• Sistema Circulatorio<br>• Balance Hídrico</p>
-      </a>
+    <!-- SECCIÓN: FRASE INSPIRADORA -->
+    <section class="quote-section">
+        <div class="quote-icon">❝</div>
+        <p class="quote-text">La Biología no solo se aprende en libros, se vive y se respeta cada día.</p>
+        <p class="quote-author">— Equipo BioExploración</p>
+    </section>
 
-      <a href="../route/temas.html"
-        class="tema-card bg-slate-900 p-8 rounded-3xl border border-emerald-900 hover:border-emerald-500">
-        <span class="inline-block px-4 py-1 bg-emerald-900 text-emerald-300 text-sm rounded-full mb-4">1° Año</span>
-        <h3 class="text-2xl font-semibold mb-6">Sistema Respiratorio</h3>
-        <p class="text-slate-400 text-sm">• Aparato Urinario<br>• Sistema Óseo<br>• Biocontroladores</p>
-      </a>
+    <!-- SECCIÓN: EQUIPO -->
+    <section class="section team-section">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label">Nuestro Equipo</span>
+            <h2 class="section-title">Quienes Hacen Posible Este Proyecto</h2>
+            <p class="section-subtitle">Estudiantes apasionados por la ciencia y la educación.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card animate-on-scroll">
+                <div class="team-avatar">👨‍🏫</div>
+                <h3>Profesor(a) Guía</h3>
+                <p class="team-role">Docente de Biología</p>
+                <p class="team-desc">Guía y apoyo fundamental en este proyecto. Su dedicación inspira a cada estudiante a explorar el mundo de la vida.</p>
+            </div>
+            <div class="team-card animate-on-scroll animate-delay-1">
+                <div class="team-avatar">👩‍🔬</div>
+                <h3>Estudiantes 1° Año</h3>
+                <p class="team-role">Investigación y Diseño</p>
+                <p class="team-desc">Participantes activos en la investigación, recopilación de información y diseño de contenido inicial.</p>
+            </div>
+            <div class="team-card animate-on-scroll animate-delay-2">
+                <div class="team-avatar">🧪</div>
+                <h3>Estudiantes 2° Año</h3>
+                <p class="team-role">Contenido Avanzado y Web</p>
+                <p class="team-desc">Encargados de contenido avanzado, desarrollo web y estructura técnica del proyecto.</p>
+            </div>
+        </div>
+    </section>
 
-      <!-- 2do Año -->
-      <a href="../route/temas.html"
-        class="tema-card bg-slate-900 p-8 rounded-3xl border border-teal-900 hover:border-teal-500">
-        <span class="inline-block px-4 py-1 bg-teal-900 text-teal-300 text-sm rounded-full mb-4">2° Año</span>
-        <h3 class="text-2xl font-semibold mb-6">Sistema Nervioso</h3>
-        <p class="text-slate-400 text-sm">• Fotosíntesis<br>• Sistema Endocrino<br>• Ecosistemas</p>
-      </a>
+    <!-- SECCIÓN: CTA -->
+    <section class="cta-section">
+        <div class="cta-content animate-on-scroll">
+            <h2>¿Listo para Explorar?</h2>
+            <p>Sumérgete en el fascinante mundo de la biología. Cada tema, cada laboratorio y cada recurso está diseñado para que aprendas de forma interactiva y divertida.</p>
+            <div class="cta-buttons">
+                <a href="route/temas.html" class="btn btn-light">
+                    <i>📚</i> Ver Todos los Temas
+                </a>
+                <a href="route/contacto.html" class="btn btn-gold">
+                    <i>✉️</i> Contáctanos
+                </a>
+            </div>
+        </div>
+    </section>
 
-      <a href="../route/temas.html"
-        class="tema-card bg-slate-900 p-8 rounded-3xl border border-teal-900 hover:border-teal-500">
-        <span class="inline-block px-4 py-1 bg-teal-900 text-teal-300 text-sm rounded-full mb-4">2° Año</span>
-        <h3 class="text-2xl font-semibold mb-6">Ciclos Biogeoquímicos</h3>
-        <p class="text-slate-400 text-sm">• Biomas de Venezuela<br>• Minerales y Vitaminas</p>
-      </a>
-    </div>
-  </section>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Bio<span>Exploración</span></h3>
+                <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán. Creado con pasión por estudiantes de 1° y 2° año.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="route/temas.html">Todos los Temas</a></li>
+                    <li><a href="route/laboratorios.html">Laboratorios</a></li>
+                    <li><a href="route/sobre.html">Sobre Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Áreas</h4>
+                <ul>
+                    <li><a href="route/temas.html#sistemas">Cuerpo Humano</a></li>
+                    <li><a href="route/temas.html#plantas">Plantas</a></li>
+                    <li><a href="route/temas.html#ecologia">Ecología</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="route/contacto.html">Escríbenos</a></li>
+                    <li><a href="route/contacto.html#equipo">Conoce al Equipo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BioExploración - Colegio Santo Domingo de Guzmán. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-  <footer class="bg-slate-900 py-12 border-t border-emerald-900">
-    <div class="max-w-7xl mx-auto px-6 text-center text-slate-500">
-      <p>© 2026 - Proyecto Escolar de Biología • 1° y 2° Año</p>
-    </div>
-  </footer>
-
-  <script src="../scripts/main.js"></script>
-  <script>
-    AOS.init({ once: true, duration: 1000 });
-  </script>
+    <script src="../scripts/script.js"></script>
 </body>
-
 </html>

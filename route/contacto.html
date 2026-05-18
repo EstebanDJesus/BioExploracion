@@ -1,251 +1,225 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - BioExplora</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-  <style>
-    .nav-link {
-      transition: all 0.4s ease;
-    }
-
-    .nav-link:hover {
-      color: #10b981;
-      transform: translateY(-2px);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - BioExploración</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<body>
 
-<body class="bg-slate-950 text-slate-100">
+    <nav class="navbar scrolled" id="navbar">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Bio<span>Exploración</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="temas.html">Temas</a></li>
+            <li><a href="laboratorios.html">Laboratorios</a></li>
+            <li><a href="sobre.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+    </nav>
 
-  <!-- NAVBAR -->
-  <nav class="bg-slate-900/95 backdrop-blur-md fixed w-full z-50 border-b border-emerald-900">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="../index.html" class="flex items-center gap-3 text-2xl font-bold">
-        <i class="fa-solid fa-dna text-emerald-500"></i>
-        <span>Bio<span class="text-emerald-500">Explora</span></span>
-      </a>
+    <header class="page-header">
+        <h1>Contacto</h1>
+        <p>¿Tienes preguntas, sugerencias o quieres colaborar? ¡Nos encantaría saber de ti!</p>
+    </header>
 
-      <div class="hidden md:flex gap-8 text-lg font-medium items-center">
-        <a href="../index.html" class="nav-link">Inicio</a>
-        <a href="sobre.html" class="nav-link">Sobre</a>
-
-        <!-- MENÚ DESPLEGABLE DE TEMAS -->
-        <div class="relative group">
-          <button class="nav-link flex items-center gap-1 text-emerald-500 hover:text-emerald-400">
-            Temas
-            <i class="fa-solid fa-chevron-down text-sm transition-transform group-hover:rotate-180"></i>
-          </button>
-
-          <!-- Dropdown -->
-          <div class="absolute hidden group-hover:block pt-4 w-80 z-50">
-            <div
-              class="bg-slate-900 border border-emerald-800 rounded-3xl shadow-2xl p-6 text-sm max-h-[85vh] overflow-auto">
-
-              <div class="space-y-8">
-                <!-- Categoría 1 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-heart-pulse"></i> Sistemas del Cuerpo Humano
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Sistema Digestivo</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Circulatorio</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Respiratorio</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Aparato Urinario</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Óseo</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Nervioso</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Impulso Nervioso</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Endocrino</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Sistema Exocrino</a></li>
-                  </ul>
+    <!-- SECCIÓN: POR QUÉ CONTACTARNOS -->
+    <section class="section" style="background: var(--color-blanco);">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;" class="animate-on-scroll">
+            <span class="section-label">Comunícate</span>
+            <h2 style="font-size: 2.2rem; color: var(--color-primario); margin-bottom: 1.5rem;">¿Por Qué Escribirnos?</h2>
+            <p style="font-size: 1.1rem; color: var(--color-texto-claro); line-height: 1.9; margin-bottom: 2rem;">
+                Tu opinión es valiosa para nosotros. Como proyecto en desarrollo, cada comentario nos ayuda a mejorar 
+                y a crear contenido más útil para la comunidad estudiantil.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: left;">
+                <div style="padding: 1.5rem; background: var(--color-fondo); border-radius: 16px;">
+                    <div style="font-size: 2rem; margin-bottom: 0.8rem;">💡</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Sugerencias de Temas</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">¿Crees que falta algún tema de biología? Cuéntanos y lo consideramos.</p>
                 </div>
-
-                <!-- Categoría 2 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-leaf"></i> Plantas y Fotosíntesis
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Estructura de las Plantas</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Fotosíntesis</a></li>
-                  </ul>
+                <div style="padding: 1.5rem; background: var(--color-fondo); border-radius: 16px;">
+                    <div style="font-size: 2rem; margin-bottom: 0.8rem;">🐛</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Reportar Errores</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">¿Encontraste un error en el contenido o en el sitio? Ayúdanos a corregirlo.</p>
                 </div>
-
-                <!-- Categoría 3 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-apple-whole"></i> Nutrición y Alimentos
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Minerales y Vitaminas en los Alimentos</a></li>
-                  </ul>
+                <div style="padding: 1.5rem; background: var(--color-fondo); border-radius: 16px;">
+                    <div style="font-size: 2rem; margin-bottom: 0.8rem;">🤝</div>
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">Colaboraciones</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro);">¿Eres docente o estudiante y quieres aportar? Escríbenos.</p>
                 </div>
-
-                <!-- Categoría 4 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-earth-americas"></i> Ecología y Medio Ambiente
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Ecosistemas y Cadenas Tróficas</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Biomas de Venezuela</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Ciclos Biogeoquímicos</a></li>
-                    <li><a href="temas.html" class="hover:text-white">Balance Hídrico y Ciclo del Agua</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 5 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-bolt"></i> Recursos y Energía
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Biomasa como Combustible</a></li>
-                  </ul>
-                </div>
-
-                <!-- Categoría 6 -->
-                <div>
-                  <h4 class="font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved"></i> Control Biológico
-                  </h4>
-                  <ul class="space-y-2 pl-6 text-slate-300">
-                    <li><a href="temas.html" class="hover:text-white">Biocontroladores</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-
-        <a href="laboratorios.html" class="nav-link">Laboratorios</a>
-        <a href="contacto.html" class="nav-link">Contacto</a>
-      </div>
-
-      <button id="menu-btn" class="md:hidden text-3xl text-emerald-400">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  </nav>
-
-  <div class="pt-28 pb-20 max-w-7xl mx-auto px-6">
-    <h1 class="text-5xl font-bold text-center mb-4" data-aos="fade-up">Contacto</h1>
-    <p class="text-xl text-slate-400 text-center mb-16" data-aos="fade-up" data-aos-delay="100">
-      Proyecto Escolar de Biología - 1° y 2° Año
-    </p>
-
-    <!-- Equipo -->
-    <section class="mb-20" data-aos="fade-up">
-      <h2 class="text-4xl font-bold text-center mb-12 text-emerald-400">Nuestro Equipo</h2>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-slate-900 p-8 rounded-3xl text-center">
-          <div class="w-24 h-24 mx-auto bg-emerald-800 rounded-2xl flex items-center justify-center text-4xl mb-6">
-            👨‍🏫
-          </div>
-          <h3 class="text-2xl font-semibold">Profesor(a) [Nombre]</h3>
-          <p class="text-emerald-400">Docente de Biología</p>
-          <p class="text-slate-400 mt-4">Guía y apoyo fundamental en este proyecto.</p>
-        </div>
-
-        <div class="bg-slate-900 p-8 rounded-3xl text-center">
-          <div class="w-24 h-24 mx-auto bg-emerald-800 rounded-2xl flex items-center justify-center text-4xl mb-6">
-            👩‍🔬
-          </div>
-          <h3 class="text-2xl font-semibold">Estudiantes 1° Año</h3>
-          <p class="text-slate-400 mt-4">Participantes activos en la investigación y diseño.</p>
-        </div>
-
-        <div class="bg-slate-900 p-8 rounded-3xl text-center">
-          <div class="w-24 h-24 mx-auto bg-emerald-800 rounded-2xl flex items-center justify-center text-4xl mb-6">
-            🧪
-          </div>
-          <h3 class="text-2xl font-semibold">Estudiantes 2° Año</h3>
-          <p class="text-slate-400 mt-4">Encargados de contenido avanzado y diseño web.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- Agradecimientos -->
-    <section class="mb-20 bg-slate-900/50 border border-emerald-900 rounded-3xl p-10" data-aos="fade-up">
-      <h2 class="text-4xl font-bold text-center mb-10 text-emerald-400">Agradecimientos</h2>
+    <section class="contact-section" id="equipo">
+        <div class="contact-grid">
+            <div class="contact-info animate-on-scroll">
+                <span class="section-label">Nuestro Equipo</span>
+                <h2>Conoce a Quienes Hacen Esto Posible</h2>
+                <p>
+                    BioExploración es un esfuerzo colaborativo entre docentes y estudiantes. 
+                    Cada persona aporta su talento y pasión por la biología para crear este recurso educativo.
+                </p>
 
-      <div class="max-w-3xl mx-auto text-lg leading-relaxed text-slate-300 space-y-8">
-        <p>
-          Queremos agradecer especialmente a nuestro profesor/a de Biología por su guía, paciencia y dedicación
-          durante todo el proceso de aprendizaje.
-        </p>
-        <p>
-          Gracias al Colegio Santo Domingo de Guzmán por brindarnos las herramientas y el espacio para desarrollar
-          este proyecto.
-        </p>
-        <p class="italic text-emerald-300">
-          “La Biología no solo se aprende en libros, se vive y se respeta cada día.”
-        </p>
-      </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">👨‍🏫</div>
+                    <div class="contact-item-text">
+                        <h4>Profesor(a) Guía</h4>
+                        <p>Docente de Biología<br>Colegio Santo Domingo de Guzmán</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">👩‍🔬</div>
+                    <div class="contact-item-text">
+                        <h4>Estudiantes de 1° Año</h4>
+                        <p>Equipo de Investigación y Contenido<br>Participantes activos en la recopilación de información</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">🧪</div>
+                    <div class="contact-item-text">
+                        <h4>Estudiantes de 2° Año</h4>
+                        <p>Equipo de Desarrollo Web y Contenido Avanzado<br>Diseño técnico y contenido especializado</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">🏫</div>
+                    <div class="contact-item-text">
+                        <h4>Colegio Santo Domingo de Guzmán</h4>
+                        <p>Institución educativa que apoya proyectos de ciencia y tecnología</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px;">
+                    <h4 style="color: var(--color-primario); margin-bottom: 1rem;">📍 Información de Contacto</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.95rem; line-height: 1.8; margin: 0;">
+                        <strong>Institución:</strong> Colegio Santo Domingo de Guzmán<br>
+                        <strong>Proyecto:</strong> BioExploración - Biología 1° y 2° Año<br>
+                        <strong>Ubicación:</strong> Venezuela<br>
+                        <strong>Período:</strong> Año Escolar 2026
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-form animate-on-scroll animate-delay-2">
+                <span class="section-label">Escríbenos</span>
+                <h2 style="font-size: 1.8rem; color: var(--color-primario); margin-bottom: 1.5rem;">¿Quieres dejarnos un mensaje?</h2>
+                <p style="color: var(--color-texto-claro); margin-bottom: 2rem;">
+                    Completa el formulario y nos pondremos en contacto contigo. 
+                    Agradecemos tus comentarios, sugerencias de nuevos temas o reportes de errores.
+                </p>
+                <form id="contactForm" onsubmit="return handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="sugerencia">Sugerencia de tema</option>
+                            <option value="error">Reportar un error</option>
+                            <option value="colaboracion">Propuesta de colaboración</option>
+                            <option value="pregunta">Pregunta general</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i>📤</i> Enviar Mensaje
+                    </button>
+                </form>
+
+                <div style="margin-top: 2rem; padding: 1.2rem; background: linear-gradient(135deg, rgba(45,106,79,0.1), rgba(64,145,108,0.1)); border-radius: 12px; border-left: 4px solid var(--color-secundario);">
+                    <p style="font-size: 0.9rem; color: var(--color-texto-claro); margin: 0; line-height: 1.6;">
+                        <strong style="color: var(--color-primario);">💬 ¿Prefieres otra forma de contacto?</strong><br>
+                        También puedes hablar directamente con algún miembro del equipo en el colegio 
+                        o dejar un mensaje con el profesor de Biología.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Formulario de Contacto (Simulado) -->
-    <section class="max-w-2xl mx-auto" data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-center mb-10">¿Quieres dejarnos un mensaje?</h2>
-
-      <form class="space-y-6 bg-slate-900 p-10 rounded-3xl">
-        <div>
-          <label class="block text-sm mb-2">Nombre completo</label>
-          <input type="text"
-            class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-emerald-500"
-            placeholder="Tu nombre">
+    <!-- SECCIÓN: PREGUNTAS FRECUENTES -->
+    <section class="section" style="background: var(--color-fondo);">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+            </div>
+            <div class="animate-on-scroll">
+                <div style="background: var(--color-blanco); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--sombra-suave);">
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">❓ ¿El contenido es gratuito?</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.95rem; margin: 0;">Sí, todo el contenido de BioExploración es completamente gratuito y está diseñado para uso educativo.</p>
+                </div>
+                <div style="background: var(--color-blanco); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--sombra-suave);">
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">❓ ¿Puedo usar este material para estudiar?</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.95rem; margin: 0;">¡Por supuesto! El sitio está pensado como herramienta de estudio complementaria para estudiantes de biología de secundaria.</p>
+                </div>
+                <div style="background: var(--color-blanco); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--sombra-suave);">
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">❓ ¿Los laboratorios virtuales funcionan en celular?</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.95rem; margin: 0;">Sí, todo el sitio es responsive. Sin embargo, algunas simulaciones pueden verse mejor en pantallas grandes.</p>
+                </div>
+                <div style="background: var(--color-blanco); border-radius: 12px; padding: 1.5rem; box-shadow: var(--sombra-suave);">
+                    <h4 style="color: var(--color-primario); margin-bottom: 0.5rem;">❓ ¿Cuándo se actualizará el contenido?</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.95rem; margin: 0;">Estamos trabajando continuamente. Las actualizaciones se publicarán a medida que finalicemos cada tema y laboratorio.</p>
+                </div>
+            </div>
         </div>
-
-        <div>
-          <label class="block text-sm mb-2">Correo electrónico</label>
-          <input type="email"
-            class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-emerald-500"
-            placeholder="ejemplo@correo.com">
-        </div>
-
-        <div>
-          <label class="block text-sm mb-2">Mensaje</label>
-          <textarea rows="6"
-            class="w-full bg-slate-800 border border-slate-700 rounded-3xl px-6 py-4 focus:outline-none focus:border-emerald-500"
-            placeholder="Escribe tu mensaje aquí..."></textarea>
-        </div>
-
-        <button type="button" onclick="enviarMensaje()"
-          class="w-full bg-emerald-600 hover:bg-emerald-500 py-5 rounded-2xl text-xl font-semibold transition-all">
-          Enviar Mensaje
-        </button>
-      </form>
     </section>
-  </div>
 
-  <!-- Footer estilo similar al de tu colegio -->
-  <footer class="bg-slate-900 border-t border-emerald-900 py-12">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <p class="text-emerald-400 mb-2">Proyecto BioExplora © 2026</p>
-      <p class="text-slate-500 text-sm">
-        Unidad Educativa Colegio Santo Domingo de Guzmán<br>
-        Biología 1° y 2° Año de Bachillerato
-      </p>
-    </div>
-  </footer>
+    <section class="quote-section">
+        <div class="quote-icon">❝</div>
+        <p class="quote-text">Queremos agradecer especialmente a nuestro profesor/a de Biología por su guía, paciencia y dedicación durante todo el proceso de aprendizaje.</p>
+        <p class="quote-author">— Equipo BioExploración</p>
+    </section>
 
-  <script src="../scripts/main.js"></script>
-  <script>
-    AOS.init({ once: true, duration: 1000 });
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Bio<span>Exploración</span></h3>
+                <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="temas.html">Temas</a></li>
+                    <li><a href="laboratorios.html">Laboratorios</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BioExploración. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-    function enviarMensaje() {
-      alert("✅ ¡Mensaje enviado con éxito! (Simulación - Sin backend)");
-    }
-  </script>
+    <script src="../scripts/script.js"></script>
 </body>
-
 </html>
