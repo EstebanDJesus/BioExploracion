@@ -133,13 +133,14 @@ img {
     100% { background-position: 0% 50%; }
 }
 
-.animate-on-scroll {
+/* Por defecto: visible. JS añade clase 'js-enabled' al <html> */
+.js-enabled .animate-on-scroll {
     opacity: 0;
     transform: translateY(40px);
     transition: var(--transicion-lenta);
 }
 
-.animate-on-scroll.visible {
+.js-enabled .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
 }

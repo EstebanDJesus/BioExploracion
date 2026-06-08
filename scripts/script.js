@@ -3,6 +3,9 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Añadir clase para habilitar animaciones (fallback si no hay JS)
+    document.documentElement.classList.add('js-enabled');
+
     initNavbar();
     initScrollAnimations();
     initCounterAnimations();

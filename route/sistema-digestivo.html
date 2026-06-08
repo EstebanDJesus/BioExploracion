@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Digestivo - BioExploración</title>
+    <meta name="description" content="Aprende todo sobre el Sistema Digestivo: anatomía, función, enzimas, absorción de nutrientes y más. Contenido para bachillerato.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Estilos específicos para páginas de tema */
+        .topic-hero {
+            background: linear-gradient(135deg, #1a472a, #2d6a4f, #40916c);
+            padding: 10rem 5% 5rem;
+            text-align: center;
+            color: var(--color-blanco);
+            position: relative;
+            overflow: hidden;
+        }
+        .topic-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .topic-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out; }
+        .topic-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 1rem auto 0; position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.2s both; }
+
+        .topic-content { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+
+        .topic-section { margin-bottom: 4rem; }
+        .topic-section h2 {
+            font-size: 2rem;
+            color: var(--color-primario);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--color-secundario);
+            display: inline-block;
+        }
+        .topic-section h3 {
+            font-size: 1.4rem;
+            color: var(--color-primario-claro);
+            margin: 2rem 0 1rem;
+        }
+        .topic-section p {
+            color: var(--color-texto-claro);
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+        .topic-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-texto-claro);
+        }
+        .topic-section ul li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        .topic-section ul li strong {
+            color: var(--color-primario);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-texto-claro);
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-container {
+            margin: 2rem 0;
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+            background: var(--color-blanco);
+            padding: 1rem;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: var(--radio-peq);
+            display: block;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(45,106,79,0.08), rgba(64,145,108,0.08));
+            border-left: 4px solid var(--color-secundario);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        .highlight-box h4 {
+            color: var(--color-primario);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(212,163,115,0.15), rgba(233,196,106,0.15));
+            border-left: 4px solid var(--color-acento);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        .fun-fact::before {
+            content: '💡 ';
+            font-size: 1.5rem;
+        }
+        .fun-fact h4 {
+            color: var(--color-primario);
+            display: inline;
+            font-size: 1.1rem;
+        }
+        .fun-fact p {
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .enzyme-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--color-blanco);
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+        }
+        .enzyme-table th {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-claro));
+            color: var(--color-blanco);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .enzyme-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-fondo-alt);
+            color: var(--color-texto-claro);
+        }
+        .enzyme-table tr:last-child td { border-bottom: none; }
+        .enzyme-table tr:hover td { background: var(--color-fondo); }
+
+        .step-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--color-blanco);
+            border-radius: var(--radio);
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+        .step-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--sombra-media);
+        }
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-blanco);
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .step-content h4 {
+            color: var(--color-primario);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .step-content p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .related-lab {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-claro));
+            color: var(--color-blanco);
+            padding: 2.5rem;
+            border-radius: var(--radio);
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .related-lab h3 {
+            color: var(--color-blanco) !important;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .related-lab p {
+            color: rgba(255,255,255,0.9) !important;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-preview {
+            background: var(--color-fondo);
+            padding: 2rem;
+            border-radius: var(--radio);
+            margin: 2rem 0;
+        }
+        .quiz-preview h4 {
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+        }
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.8rem;
+            background: var(--color-blanco);
+            border: 2px solid var(--color-fondo-alt);
+            border-radius: var(--radio-peq);
+            text-align: left;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transicion);
+        }
+        .quiz-option:hover {
+            border-color: var(--color-secundario);
+            background: rgba(64,145,108,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .two-column { grid-template-columns: 1fr; }
+            .step-card { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar scrolled" id="navbar">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Bio<span>Exploración</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="temas.html">Temas</a></li>
+            <li><a href="laboratorios.html">Laboratorios</a></li>
+            <li><a href="sobre.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+    </nav>
+
+    <header class="topic-hero">
+        <div style="display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; margin-bottom: 1.5rem;">
+            🫀 Sistemas del Cuerpo Humano • 1° Año
+        </div>
+        <h1>Sistema Digestivo</h1>
+        <p>El recorrido increíble que hace la comida desde tu boca hasta convertirse en energía para tu cuerpo. Anatomía, función, enzimas y mucho más.</p>
+    </header>
+
+    <main class="topic-content">
+
+        <!-- INTRODUCCIÓN -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🍎 ¿Qué es el Sistema Digestivo?</h2>
+            <p>
+                El <strong>sistema digestivo</strong> es el conjunto de órganos encargados de transformar los alimentos que consumes 
+                en nutrientes que tu cuerpo puede absorber y utilizar. Es como una <strong>fábrica de procesamiento biológico</strong> 
+                que trabaja 24 horas al día, incluso mientras duermes.
+            </p>
+            <p>
+                Este sistema no solo se trata de "comer y eliminar". Es un proceso complejo que involucra <strong>digestión mecánica</strong> 
+                (masticar, mezclar) y <strong>digestión química</strong> (enzimas que descomponen moléculas), coordinado por músculos, 
+                nervios y hormonas.
+            </p>
+
+            <div class="highlight-box">
+                <h4>🎯 Objetivos de Aprendizaje</h4>
+                <p>Al finalizar este tema serás capaz de: identificar los órganos del sistema digestivo, explicar el proceso de digestión paso a paso, describir el papel de las enzimas digestivas, y comprender cómo los nutrientes son absorbidos por el cuerpo.</p>
+            </div>
+        </section>
+
+        <!-- ANATOMÍA GENERAL -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🗺️ Anatomía: El Mapa del Sistema Digestivo</h2>
+            <p>
+                El sistema digestivo humano mide aproximadamente <strong>9 metros de largo</strong> si se estirara completamente. 
+                Se divide en dos grandes grupos: el <strong>tracto gastrointestinal</strong> (tubo continuo) y los <strong>órganos accesorios</strong> 
+                (glándulas que producen sustancias digestivas).
+            </p>
+
+            <div class="image-container">
+                <img src="images/digestive-system-anatomy.png" alt="Diagrama anatómico del sistema digestivo humano con etiquetas">
+            </div>
+            <p class="image-caption">Figura 1: Vista general del sistema digestivo humano. Fuente: Encyclopædia Britannica.</p>
+
+            <div class="two-column">
+                <div>
+                    <h3>📍 Tracto Gastrointestinal</h3>
+                    <ul>
+                        <li><strong>Boca:</strong> Inicio de la digestión. Dientes, lengua y glándulas salivales.</li>
+                        <li><strong>Faringe:</strong> Cruce entre sistema digestivo y respiratorio.</li>
+                        <li><strong>Esófago:</strong> Tubo muscular de ~25 cm que conecta boca con estómago.</li>
+                        <li><strong>Estómago:</strong> Bolsa muscular que almacena y mezcla alimentos.</li>
+                        <li><strong>Intestino delgado:</strong> ~6 metros. Duodeno, yeyuno e íleon.</li>
+                        <li><strong>Intestino grueso:</strong> ~1.5 metros. Ceco, colon, recto y ano.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🔧 Órganos Accesorios</h3>
+                    <ul>
+                        <li><strong>Hígado:</strong> Mayor glándula del cuerpo. Produce bilis.</li>
+                        <li><strong>Vesícula biliar:</strong> Almacena y concentra la bilis.</li>
+                        <li><strong>Páncreas:</strong> Produce enzimas digestivas y hormonas (insulina).</li>
+                        <li><strong>Glándulas salivales:</strong> Parótida, sublingual y submandibular.</li>
+                        <li><strong>Apéndice:</strong> Pequeño saco en el ciego. Función inmunológica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="images/digestive-system-spanish.png" alt="Diagrama del sistema digestivo con etiquetas en español">
+            </div>
+            <p class="image-caption">Figura 2: Sistema digestivo con nomenclatura en español. Fuente: NIDDK.</p>
+        </section>
+
+        <!-- EL PROCESO DE DIGESTIÓN -->
+        <section class="topic-section animate-on-scroll">
+            <h2>⚙️ El Proceso de Digestión: Paso a Paso</h2>
+            <p>
+                La digestión completa dura entre <strong>24 y 72 horas</strong> dependiendo del tipo de alimento. 
+                Cada órgano tiene una función específica y se comunica con los demás mediante señales nerviosas y hormonales.
+            </p>
+
+            <div class="image-container">
+                <img src="images/digestive-process-infographic.png" alt="Infografía del proceso digestivo completo">
+            </div>
+            <p class="image-caption">Figura 3: Infografía del proceso digestivo completo desde la ingestión hasta la absorción. Fuente: Kids Discover.</p>
+
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>🦷 Ingestión y Masticación (Boca)</h4>
+                    <p>La digestión comienza en la <strong>boca</strong>. Los dientes desgarran y trituran el alimento (digestión mecánica), mientras la <strong>amilasa salival</strong> (enzima de la saliva) empieza a descomponer los carbohidratos en azúcares más simples. La lengua forma el bolo alimenticio y lo empuja hacia la faringe.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>📉 Deglución y Peristalsis (Esófago)</h4>
+                    <p>Al tragar, la <strong>epiglotis</strong> cierra la laringe para evitar que el alimento entre a las vías respiratorias. El esófago utiliza <strong>movimientos peristálticos</strong> —contracciones ondulantes de sus músculos— para empujar el bolo hacia el estómago. Este proceso es involuntario y automático.</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="images/peristalsis-diagram.png" alt="Diagrama de la peristalsis en el esófago">
+            </div>
+            <p class="image-caption">Figura 4: La peristalsis: contracciones musculares que impulsan el alimento por el esófago. Fuente: Shutterstock.</p>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>🧪 Digestión Gástrica (Estómago)</h4>
+                    <p>El estómago secreta <strong>jugo gástrico</strong> compuesto por ácido clorhídrico (HCl) y la enzima <strong>pepsina</strong>. El pH del estómago es de 1.5-3.5 —muy ácido— lo que desnaturaliza las proteínas y las descompone en péptidos. El estómago también mezcla el alimento con movimientos de amasamiento, convirtiéndolo en <strong>quimo</strong>.</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="images/stomach-digestion.png" alt="Digestión de proteínas en el estómago con pepsina y HCl">
+            </div>
+            <p class="image-caption">Figura 5: La pepsina, activada por el ácido clorhídrico, descompone las proteínas en péptidos. Fuente: Shutterstock.</p>
+
+            <div class="image-container">
+                <img src="images/pepsin-protein.png" alt="Proceso de activación de la pepsina desde pepsinógeno">
+            </div>
+            <p class="image-caption">Figura 6: El pepsinógeno (enzima inactiva) se convierte en pepsina activa por acción del HCl. Fuente: Shutterstock.</p>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El estómago puede expandirse hasta <strong>4 litros</strong> de capacidad. Además, se regenera completamente cada 3-4 días gracias a que su mucosa produce constantemente nuevas células para protegerse de su propio ácido.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>🔬 Digestión Intestinal (Intestino Delgado)</h4>
+                    <p>El intestino delgado es donde ocurre la <strong>mayor parte de la digestión y absorción</strong>. El páncreas vierte enzimas (amilasa, lipasa, proteasas) y el hígado aporta <strong>bilis</strong> (almacenada en la vesícula biliar) que emulsifica las grasas. El quimo se descompone en nutrientes simples: <strong>glucosa, aminoácidos, ácidos grasos y glicerol</strong>.</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="images/pancreas-enzymes.png" alt="Diagrama del páncreas mostrando enzimas digestivas y hormonas">
+            </div>
+            <p class="image-caption">Figura 7: El páncreas produce enzimas digestivas (amilasa, lipasa, proteasa) y hormonas (insulina, glucagón). Fuente: Shutterstock.</p>
+
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>🧽 Absorción de Nutrientes (Vellosidades Intestinales)</h4>
+                    <p>La pared del intestino delgado está cubierta de <strong>vellosidades</strong> —pequeñas proyecciones que aumentan la superficie de absorción hasta 250 m². Cada vellosidad contiene capilares sanguíneos (absorben glucosa y aminoácidos) y vasos linfáticos llamados <strong>lacteales</strong> (absorben lípidos). Los nutrientes pasan al torrente sanguíneo y son transportados a todas las células del cuerpo.</p>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="images/intestinal-villi-diagram.png" alt="Diagrama detallado de las vellosidades intestinales">
+            </div>
+            <p class="image-caption">Figura 8: Estructura de las vellosidades intestinales: pliegues, vellos y microvellos que maximizan la absorción. Fuente: Shutterstock.</p>
+
+            <div class="image-container">
+                <img src="images/villi-absorption.png" alt="Sección de una vellosidad mostrando capilares y lacteales">
+            </div>
+            <p class="image-caption">Figura 9: Sección de una vellosidad intestinal mostrando los capilares sanguíneos y los lacteales. Fuente: Biology IGCSE.</p>
+
+            <div class="image-container">
+                <img src="images/villi-cross-section.png" alt="Corte longitudinal de una vellosidad con microvellos">
+            </div>
+            <p class="image-caption">Figura 10: Corte longitudinal de una vellosidad: el epitelio es de una sola célula de grosor para facilitar la difusión. Fuente: Biology IGCSE.</p>
+
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h4>🚽 Formación de Heces (Intestino Grueso)</h4>
+                    <p>El intestino grueso absorbe <strong>agua y electrolitos</strong> del material restante, concentrándolo en <strong>heces</strong>. La flora bacteriana intestinal (microbiota) fermenta fibras no digeridas y produce vitaminas (K, B12). El recto almacena las heces hasta que se produce la defecación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENZIMAS DIGESTIVAS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🧬 Las Enzimas Digestivas: Los Químicos del Cuerpo</h2>
+            <p>
+                Las <strong>enzimas</strong> son proteínas especializadas que aceleran las reacciones químicas sin consumirse en el proceso. 
+                En la digestión, cada enzima actúa sobre un tipo específico de nutriente. Son como <strong>llaves que solo abren una cerradura específica</strong>.
+            </p>
+
+            <table class="enzyme-table">
+                <thead>
+                    <tr>
+                        <th>Enzima</th>
+                        <th>Órgano</th>
+                        <th>Sustrato</th>
+                        <th>Producto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Amilasa salival</strong></td>
+                        <td>Boca</td>
+                        <td>Almidón (carbohidratos)</td>
+                        <td>Maltosa</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pepsina</strong></td>
+                        <td>Estómago</td>
+                        <td>Proteínas</td>
+                        <td>Péptidos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Amilasa pancreática</strong></td>
+                        <td>Intestino delgado</td>
+                        <td>Almidón</td>
+                        <td>Maltosa</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lipasa</strong></td>
+                        <td>Páncreas / Intestino</td>
+                        <td>Lípidos (grasas)</td>
+                        <td>Ácidos grasos + Glicerol</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Proteasas</strong> (tripsina, quimotripsina)</td>
+                        <td>Páncreas / Intestino</td>
+                        <td>Proteínas y péptidos</td>
+                        <td>Aminoácidos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Maltasa, lactasa, sucrasa</strong></td>
+                        <td>Intestino delgado</td>
+                        <td>Azúcares dobles</td>
+                        <td>Glucosa, galactosa, fructosa</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="image-container">
+                <img src="images/digestion-process-steps.png" alt="Proceso de digestión mostrando enzimas y descomposición de nutrientes">
+            </div>
+            <p class="image-caption">Figura 11: Esquema del proceso digestivo mostrando la acción de enzimas sobre carbohidratos, proteínas y lípidos. Fuente: Dreamstime.</p>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El cuerpo produce aproximadamente <strong>1.5 litros de saliva al día</strong>. La amilasa salival puede seguir actuando en el estómago durante unos 30 minutos antes de que el ácido la desnaturalice. ¡Eso explica por qué el pan sabe dulce si lo masticas mucho tiempo!</p>
+            </div>
+        </section>
+
+        <!-- HÍGADO Y BILIS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🫁 El Hígado: La Fábrica Química del Cuerpo</h2>
+            <p>
+                El <strong>hígado</strong> es el órgano más grande del sistema digestivo y cumple más de <strong>500 funciones</strong>. 
+                Es un órgano vital que no puede faltar: sin hígado, la digestión de grasas sería imposible y el cuerpo no podría desintoxicarse.
+            </p>
+
+            <div class="highlight-box">
+                <h4>🔑 Funciones del Hígado en la Digestión</h4>
+                <p><strong>1. Produce bilis:</strong> Sustancia verde-amarillenta que emulsifica las grasas (las divide en gotitas más pequeñas para que las lipasas puedan actuar).<br><br>
+                <strong>2. Almacena nutrientes:</strong> Guarda glucosa en forma de glucógeno, vitaminas y minerales.<br><br>
+                <strong>3. Desintoxicación:</strong> Filtra toxinas, alcohol y medicamentos de la sangre.<br><br>
+                <strong>4. Síntesis de proteínas:</strong> Produce albúmina y factores de coagulación.</p>
+            </div>
+
+            <p>
+                La <strong>bilis</strong> no es una enzima —es un surfactante. No descompone químicamente las grasas, sino que las 
+                <strong>emulsifica</strong> (rompe gotas grandes en gotitas pequeñas), aumentando la superficie disponible para que la lipasa actúe. 
+                Es como el jabón que usas para lavar platos con grasa: no "come" la grasa, pero la hace soluble en agua.
+            </p>
+        </section>
+
+        <!-- TRASTORNOS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>⚠️ Trastornos del Sistema Digestivo</h2>
+            <p>
+                Conocer los trastornos digestivos más comunes nos ayuda a entender la importancia de una alimentación saludable 
+                y a reconocer señales de alerta en nuestro cuerpo.
+            </p>
+
+            <div class="two-column">
+                <div>
+                    <h3>🔴 Trastornos Comunes</h3>
+                    <ul>
+                        <li><strong>Gastritis:</strong> Inflamación de la mucosa gástrica. Causada por H. pylori, alcohol o antiinflamatorios.</li>
+                        <li><strong>Úlcera péptica:</strong> Lesión en el estómago o duodeno. El 80% está relacionada con H. pylori.</li>
+                        <li><strong>Reflujo gastroesofágico:</strong> El ácido del estómago sube al esófago, causando ardor.</li>
+                        <li><strong>Síndrome del intestino irritable (SII):</strong> Trastorno funcional con dolor abdominal y cambios en el hábito intestinal.</li>
+                        <li><strong>Enfermedad de Crohn:</strong> Inflamación crónica del tracto digestivo. Enfermedad autoinmune.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🟢 Consejos de Salud</h3>
+                    <ul>
+                        <li><strong>Come despacio:</strong> La masticación completa reduce la carga del estómago.</li>
+                        <li><strong>Hidratación:</strong> Bebe al menos 2 litros de agua al día para facilitar el tránsito intestinal.</li>
+                        <li><strong>Fibra:</strong> Consume frutas, verduras y granos integrales para mantener el intestino saludable.</li>
+                        <li><strong>Evita excesos:</strong> El alcohol, grasas saturadas y comida ultra-procesada dañan el sistema digestivo.</li>
+                        <li><strong>Escucha a tu cuerpo:</strong> El dolor abdominal persistente siempre debe consultarse con un médico.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATOS CURIOSOS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🤯 Datos Curiosos sobre tu Digestión</h2>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Tu estómago produce un nuevo revestimiento de mucosa cada <strong>3-4 días</strong> para protegerse de su propio ácido. Si no lo hiciera, el ácido clorhídrico (capaz de disolver metal) te "comería" por dentro.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El intestino delgado tiene aproximadamente <strong>6 metros de largo</strong>, pero su superficie interna (gracias a pliegues, vellosidades y microvellos) equivale al tamaño de una <strong>cancha de tenis</strong> (~250 m²).</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El cuerpo humano tiene aproximadamente <strong>39 billones de bacterias</strong> en el intestino (más que células propias). Estas bacterias pesan alrededor de 1.5 kg y son esenciales para la digestión, inmunidad y incluso el estado de ánimo.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Los eructos no son aire "de afuera", sino <strong>aire que tragaste</strong> al comer o beber. El estómago libera este gas para evitar distensión. ¡Así que en realidad estás "devolviendo" aire que ya estaba dentro de ti!</p>
+            </div>
+        </section>
+
+        <!-- LABORATORIO RELACIONADO -->
+        <section class="animate-on-scroll">
+            <div class="related-lab">
+                <h3>🧪 ¿Quieres Experimentar?</h3>
+                <p>En nuestro Laboratorio Virtual del Sistema Digestivo podrás seguir el recorrido de un alimento en 3D, 
+                observar las enzimas en acción y controlar el pH de cada órgano. ¡Una experiencia interactiva que complementa este tema!</p>
+                <a href="laboratorios.html#digestivo" class="btn btn-light" style="display: inline-flex;">
+                    <i>🔬</i> Ir al Laboratorio Virtual
+                </a>
+            </div>
+        </section>
+
+        <!-- MINI QUIZ -->
+        <section class="topic-section animate-on-scroll">
+            <h2>📝 Verifica tu Aprendizaje</h2>
+            <p>Responde estas preguntas para comprobar lo que has aprendido. (Las respuestas se mostrarán al hacer clic)</p>
+
+            <div class="quiz-preview">
+                <h4>1. ¿Qué enzima se encuentra en la saliva y comienza la digestión de carbohidratos?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Amilasa salival — Correcto! La amilasa salival descompone el almidón en maltosa.'">A) Amilasa salival</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Pepsina — Incorrecto. La pepsina actúa en el estómago sobre proteínas.'">B) Pepsina</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Lipasa — Incorrecto. La lipasa actúa sobre lípidos en el intestino.'">C) Lipasa</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>2. ¿Cuál es el pH aproximado del estómago humano?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ 7.0 — Incorrecto. Ese es el pH neutro, como el agua pura.'">A) 7.0 (neutro)</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ 1.5-3.5 — Correcto! El estómago es muy ácido gracias al HCl.'">B) 1.5-3.5 (muy ácido)</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ 8.0 — Incorrecto. Ese pH es básico, como el bicarbonato.'">C) 8.0 (básico)</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>3. ¿Qué estructuras aumentan la superficie de absorción en el intestino delgado?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Papilas gustativas — Incorrecto. Esas están en la lengua.'">A) Papilas gustativas</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Vellosidades y microvellos — Correcto! Aumentan la superficie hasta 250 m².'">B) Vellosidades y microvellos</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Criptas de Lieberkühn — Incorrecto. Son glándulas que producen jugo intestinal.'">C) Criptas de Lieberkühn</button>
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN ENTRE TEMAS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🔗 Continúa tu Aprendizaje</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <a href="temas.html" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion); border: 2px solid transparent;">
+                    <span style="color: var(--color-secundario); font-weight: 600; font-size: 0.9rem;">← Volver a</span>
+                    <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Todos los Temas</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem; margin: 0;">Explora las 6 áreas de biología disponibles.</p>
+                </a>
+                <a href="#" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion); border: 2px solid transparent; opacity: 0.7;">
+                    <span style="color: var(--color-secundario); font-weight: 600; font-size: 0.9rem;">Próximo tema →</span>
+                    <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Sistema Circulatorio</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem; margin: 0;">En desarrollo. El transporte de la vida: corazón, sangre y vasos.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Bio<span>Exploración</span></h3>
+                <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="temas.html">Temas</a></li>
+                    <li><a href="laboratorios.html">Laboratorios</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Áreas</h4>
+                <ul>
+                    <li><a href="#">Cuerpo Humano</a></li>
+                    <li><a href="#">Plantas</a></li>
+                    <li><a href="#">Ecología</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BioExploración. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
