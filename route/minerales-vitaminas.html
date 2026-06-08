@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minerales y Vitaminas - BioExploración</title>
+    <meta name="description" content="Aprende sobre los minerales y vitaminas esenciales en los alimentos: funciones, fuentes, deficiencias y recomendaciones diarias. Contenido para bachillerato.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ============================================
+           ESTILOS PROPIOS DEL TEMA MINERALES Y VITAMINAS
+        ============================================ */
+        .topic-hero {
+            background: linear-gradient(135deg, #1a472a, #2d6a4f, #40916c);
+            padding: 10rem 5% 5rem;
+            text-align: center;
+            color: var(--color-blanco);
+            position: relative;
+            overflow: hidden;
+        }
+        .topic-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .topic-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out; }
+        .topic-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 1rem auto 0; position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.2s both; }
+
+        .topic-content { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+        .topic-section { margin-bottom: 3rem; }
+        .topic-section h2 {
+            font-size: 2rem;
+            color: var(--color-primario);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--color-secundario);
+            display: inline-block;
+        }
+        .topic-section h3 {
+            font-size: 1.4rem;
+            color: var(--color-primario-claro);
+            margin: 1.5rem 0 1rem;
+        }
+        .topic-section p {
+            color: var(--color-texto-claro);
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+        .topic-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-texto-claro);
+        }
+        .topic-section ul li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        .topic-section ul li strong { color: var(--color-primario); }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-texto-claro);
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .image-container {
+            margin: 2rem 0;
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+            background: var(--color-blanco);
+            padding: 1rem;
+        }
+        .image-container svg {
+            width: 100%;
+            border-radius: var(--radio-peq);
+            display: block;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(45,106,79,0.08), rgba(64,145,108,0.08));
+            border-left: 4px solid var(--color-secundario);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+        .highlight-box h4 {
+            color: var(--color-primario);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .highlight-box p { margin: 0; font-size: 1rem; }
+
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(212,163,115,0.15), rgba(233,196,106,0.15));
+            border-left: 4px solid var(--color-acento);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+        .fun-fact::before { content: '💡 '; font-size: 1.5rem; }
+        .fun-fact h4 {
+            color: var(--color-primario);
+            display: inline;
+            font-size: 1.1rem;
+        }
+        .fun-fact p { margin-top: 0.5rem; margin-bottom: 0; }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--color-blanco);
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-claro));
+            color: var(--color-blanco);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-fondo-alt);
+            color: var(--color-texto-claro);
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: var(--color-fondo); }
+
+        .quiz-preview {
+            background: var(--color-fondo);
+            padding: 2rem;
+            border-radius: var(--radio);
+            margin: 1.5rem 0;
+        }
+        .quiz-preview h4 {
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+        }
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.8rem;
+            background: var(--color-blanco);
+            border: 2px solid var(--color-fondo-alt);
+            border-radius: var(--radio-peq);
+            text-align: left;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transicion);
+        }
+        .quiz-option:hover {
+            border-color: var(--color-secundario);
+            background: rgba(64,145,108,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .two-column { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+    <a href="../index.html" class="logo">
+        <div class="logo-icon">🌿</div>
+        <div class="logo-text">Bio<span>Exploración</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="temas.html">Temas</a></li>
+        <li><a href="laboratorios.html">Laboratorios</a></li>
+        <li><a href="sobre.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+</nav>
+
+<header class="topic-hero">
+    <div style="display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; margin-bottom: 1.5rem;">
+        🥗 Nutrición y Alimentos • 1° Año
+    </div>
+    <h1>Minerales y Vitaminas</h1>
+    <p>Los micronutrientes esenciales: descubre los minerales y vitaminas que tu cuerpo necesita en pequeñas cantidades, sus funciones, fuentes alimenticias y consecuencias de su deficiencia.</p>
+</header>
+
+<main class="topic-content">
+
+    <!-- INTRODUCCIÓN -->
+    <section class="topic-section animate-on-scroll">
+        <h2>🥦 ¿Qué son los minerales y las vitaminas?</h2>
+        <p>
+            Los <strong>minerales</strong> y las <strong>vitaminas</strong> son <strong>micronutrientes</strong>, es decir, 
+            sustancias que el organismo necesita en cantidades muy pequeñas (miligramos o microgramos) pero que son 
+            <strong>esenciales</strong> para el correcto funcionamiento del metabolismo, el crecimiento y la prevención de enfermedades.
+        </p>
+        <p>
+            A diferencia de los macronutrientes (carbohidratos, proteínas y grasas), los micronutrientes <strong>no aportan energía</strong>, 
+            pero actúan como <strong>cofactores enzimáticos</strong>, <strong>antioxidantes</strong>, reguladores hormonales y 
+            componentes estructurales de tejidos. La mayoría no pueden ser sintetizados por el cuerpo, por lo que deben obtenerse 
+            a través de la <strong>alimentación</strong>.
+        </p>
+        <div class="highlight-box">
+            <h4>📌 Diferencia clave</h4>
+            <p><strong>Minerales:</strong> Elementos inorgánicos (ej: calcio, hierro, zinc).<br>
+            <strong>Vitaminas:</strong> Compuestos orgánicos (ej: vitamina C, vitamina D, complejo B).</p>
+        </div>
+    </section>
+
+    <!-- CLASIFICACIÓN GENERAL -->
+    <section class="topic-section animate-on-scroll">
+        <h2>📊 Clasificación de los micronutrientes</h2>
+        <div class="image-container">
+            <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="300" fill="#F8F9FA" rx="12"/>
+                <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a472a">Clasificación de Minerales y Vitaminas</text>
+                <!-- Minerales -->
+                <rect x="30" y="60" width="350" height="220" rx="10" fill="#D4E6F1" stroke="#2E86C1" stroke-width="2"/>
+                <text x="205" y="90" text-anchor="middle" font-size="16" font-weight="bold" fill="#1B4F72">Minerales</text>
+                <rect x="50" y="110" width="310" height="30" rx="5" fill="#AED6F1"/>
+                <text x="205" y="130" text-anchor="middle" font-size="12" fill="#0E2F44">Macrominerales ( > 100 mg/día)</text>
+                <text x="205" y="155" text-anchor="middle" font-size="11">Calcio, Fósforo, Magnesio, Sodio, Potasio, Cloro, Azufre</text>
+                <rect x="50" y="180" width="310" height="30" rx="5" fill="#AED6F1"/>
+                <text x="205" y="200" text-anchor="middle" font-size="12" fill="#0E2F44">Oligoelementos ( < 100 mg/día)</text>
+                <text x="205" y="225" text-anchor="middle" font-size="11">Hierro, Zinc, Cobre, Manganeso, Yodo, Selenio, Flúor, Cromo</text>
+                <!-- Vitaminas -->
+                <rect x="420" y="60" width="350" height="220" rx="10" fill="#E8DAEF" stroke="#6C3483" stroke-width="2"/>
+                <text x="595" y="90" text-anchor="middle" font-size="16" font-weight="bold" fill="#4A235A">Vitaminas</text>
+                <rect x="440" y="110" width="310" height="30" rx="5" fill="#D2B4DE"/>
+                <text x="595" y="130" text-anchor="middle" font-size="12" fill="#2E0F3A">Liposolubles (A, D, E, K)</text>
+                <text x="595" y="155" text-anchor="middle" font-size="11">Se almacenan en tejido adiposo e hígado</text>
+                <rect x="440" y="180" width="310" height="30" rx="5" fill="#D2B4DE"/>
+                <text x="595" y="200" text-anchor="middle" font-size="12" fill="#2E0F3A">Hidrosolubles (C y complejo B)</text>
+                <text x="595" y="225" text-anchor="middle" font-size="11">No se almacenan, exceso se excreta por orina</text>
+            </svg>
+            <p class="image-caption">Figura 1: Clasificación de los micronutrientes esenciales.</p>
+        </div>
+    </section>
+
+    <!-- MINERALES: TABLA COMPLETA -->
+    <section class="topic-section animate-on-scroll">
+        <h2>🧂 Minerales esenciales: funciones y fuentes</h2>
+        <p>Los minerales participan en la formación de huesos, transmisión nerviosa, equilibrio hídrico, transporte de oxígeno y muchas reacciones enzimáticas.</p>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>Mineral</th><th>Función principal</th><th>Fuentes alimenticias</th><th>Deficiencia (enfermedad)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Calcio (Ca)</strong></td><td>Formación de huesos y dientes, coagulación, contracción muscular</td><td>Lácteos, sardinas, brócoli, almendras</td><td>Osteoporosis, raquitismo, tetania</td></tr>
+                <tr><td><strong>Fósforo (P)</strong></td><td>Estructura ósea, ATP, membranas celulares</td><td>Carne, pescado, huevo, legumbres</td><td>Debilidad muscular, dolor óseo</td></tr>
+                <tr><td><strong>Magnesio (Mg)</strong></td><td>Cofactor de más de 300 enzimas, relajación muscular</td><td>Frutos secos, espinacas, chocolate negro</td><td>Calambres, arritmias, fatiga</td></tr>
+                <tr><td><strong>Hierro (Fe)</strong></td><td>Transporte de oxígeno (hemoglobina y mioglobina)</td><td>Carne roja, lentejas, espinacas, hígado</td><td>Anemia ferropénica (cansancio, palidez)</td></tr>
+                <tr><td><strong>Zinc (Zn)</strong></td><td>Cicatrización, sistema inmune, síntesis de proteínas</td><td>Ostras, carne, semillas de calabaza</td><td>Retraso crecimiento, caída de cabello</td></tr>
+                <tr><td><strong>Yodo (I)</strong></td><td>Hormonas tiroideas (metabolismo basal)</td><td>Sal yodada, pescados, algas</td><td>Bocio, hipotiroidismo, cretinismo</td></tr>
+                <tr><td><strong>Potasio (K)</strong></td><td>Equilibrio hídrico, presión arterial, impulsos nerviosos</td><td>Plátano, papa, aguacate, tomate</td><td>Debilidad, arritmias, calambres</td></tr>
+                <tr><td><strong>Sodio (Na)</strong></td><td>Equilibrio de fluidos, transmisión nerviosa</td><td>Sal de mesa, alimentos procesados</td><td>Hiponatremia (confusión, convulsiones)</td></tr>
+            </tbody>
+        </table>
+        <div class="fun-fact">
+            <h4>⚠️ Exceso de sodio</h4>
+            <p>El consumo elevado de sodio (más de 5 g de sal/día) se asocia con hipertensión arterial, enfermedad cardiovascular y accidentes cerebrovasculares. La OMS recomienda menos de 2 g de sodio (5 g de sal) al día.</p>
+        </div>
+    </section>
+
+    <!-- VITAMINAS: TABLA COMPLETA -->
+    <section class="topic-section animate-on-scroll">
+        <h2>💊 Vitaminas: liposolubles e hidrosolubles</h2>
+        <p>Las vitaminas son compuestos orgánicos que actúan como precursores de coenzimas o antioxidantes. Excepto la vitamina D (que se sintetiza con el sol), deben obtenerse de la dieta.</p>
+        <table class="comparison-table">
+            <thead>
+                <tr><th>Vitamina</th><th>Función</th><th>Fuentes</th><th>Deficiencia</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Vitamina A (retinol)</strong></td><td>Visión, piel, mucosas, sistema inmune</td><td>Zanahoria, calabaza, hígado, espinacas</td><td>Ceguera nocturna, xeroftalmia</td></tr>
+                <tr><td><strong>Vitamina D (calciferol)</strong></td><td>Absorción de calcio y fósforo, huesos</td><td>Pescado graso, yema de huevo, sol</td><td>Raquitismo en niños, osteomalacia</td></tr>
+                <tr><td><strong>Vitamina E (tocoferol)</strong></td><td>Antioxidante, protección membranas</td><td>Aceites vegetales, frutos secos</td><td>Problemas neurológicos (rara)</td></tr>
+                <tr><td><strong>Vitamina K</strong></td><td>Coagulación sanguínea</td><td>Verduras de hoja verde (col, espinaca)</td><td>Hemorragias</td></tr>
+                <tr><td><strong>Vitamina C (ácido ascórbico)</strong></td><td>Antioxidante, síntesis de colágeno</td><td>Cítricos, kiwi, pimientos, fresas</td><td>Escorbuto (sangrado encías, heridas)</td></tr>
+                <tr><td><strong>Vitamina B1 (tiamina)</strong></td><td>Metabolismo energético, nervios</td><td>Cereales integrales, cerdo, legumbres</td><td>Beriberi (debilidad, neuropatía)</td></tr>
+                <tr><td><strong>Vitamina B3 (niacina)</strong></td><td>Respiración celular, piel</td><td>Carnes, pescado, cacahuetes</td><td>Pelagra (dermatitis, diarrea, demencia)</td></tr>
+                <tr><td><strong>Vitamina B12 (cobalamina)</strong></td><td>Formación de glóbulos rojos, ADN</td><td>Alimentos de origen animal (hígado, pescado)</td><td>Anemia perniciosa, daño neurológico</td></tr>
+                <tr><td><strong>Ácido fólico (B9)</strong></td><td>División celular, embarazo</td><td>Verduras de hoja verde, legumbres</td><td>Anemia, defectos del tubo neural</td></tr>
+            </tbody>
+        </table>
+        <div class="highlight-box">
+            <h4>🥩 Vitamina B12 y vegetarianos</h4>
+            <p>La vitamina B12 sólo se encuentra en alimentos de origen animal. Los vegetarianos estrictos (veganos) deben suplementarla para evitar deficiencias neurológicas irreversibles.</p>
+        </div>
+    </section>
+
+    <!-- FUENTES ALIMENTICIAS (infografía SVG) -->
+    <section class="topic-section animate-on-scroll">
+        <h2>🥑 Alimentos ricos en vitaminas y minerales</h2>
+        <div class="image-container">
+            <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="450" fill="#FEF9E6" rx="12"/>
+                <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a472a">Fuentes alimenticias de micronutrientes</text>
+                <!-- Grupo frutas y verduras -->
+                <rect x="30" y="60" width="230" height="170" rx="10" fill="#C8E6C9" stroke="#2E7D32"/>
+                <text x="145" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B5E20">🍎 Frutas y Verduras</text>
+                <text x="145" y="110" text-anchor="middle" font-size="11">Vitamina C: cítricos, kiwi, pimientos</text>
+                <text x="145" y="130" text-anchor="middle" font-size="11">Vitamina A: zanahoria, calabaza</text>
+                <text x="145" y="150" text-anchor="middle" font-size="11">Ácido fólico: espinacas, brócoli</text>
+                <text x="145" y="170" text-anchor="middle" font-size="11">Potasio: plátano, aguacate</text>
+                <text x="145" y="190" text-anchor="middle" font-size="11">Magnesio: espinacas, acelgas</text>
+                <!-- Grupo lácteos y huevos -->
+                <rect x="290" y="60" width="230" height="170" rx="10" fill="#FFE0B2" stroke="#EF6C00"/>
+                <text x="405" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#E65100">🥛 Lácteos y Huevos</text>
+                <text x="405" y="110" text-anchor="middle" font-size="11">Calcio: leche, queso, yogur</text>
+                <text x="405" y="130" text-anchor="middle" font-size="11">Fósforo: queso, huevo</text>
+                <text x="405" y="150" text-anchor="middle" font-size="11">Vitamina D: huevo, leche fortificada</text>
+                <text x="405" y="170" text-anchor="middle" font-size="11">Vitamina B12: huevo</text>
+                <text x="405" y="190" text-anchor="middle" font-size="11">Riboflavina (B2): lácteos</text>
+                <!-- Grupo carnes, pescados y legumbres -->
+                <rect x="550" y="60" width="220" height="170" rx="10" fill="#F8BBD9" stroke="#AD1457"/>
+                <text x="660" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#880E4F">🍗 Carnes y Legumbres</text>
+                <text x="660" y="110" text-anchor="middle" font-size="11">Hierro: carne roja, lentejas</text>
+                <text x="660" y="130" text-anchor="middle" font-size="11">Zinc: ostras, carne, garbanzos</text>
+                <text x="660" y="150" text-anchor="middle" font-size="11">Vitaminas B3, B6, B12: pescado, hígado</text>
+                <text x="660" y="170" text-anchor="middle" font-size="11">Proteínas + hierro: legumbres</text>
+                <!-- Grupo frutos secos y semillas -->
+                <rect x="30" y="260" width="350" height="160" rx="10" fill="#D1C4E9" stroke="#4527A0"/>
+                <text x="205" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#311B92">🥜 Frutos secos y semillas</text>
+                <text x="205" y="310" text-anchor="middle" font-size="11">Magnesio, zinc, vitamina E, selenio</text>
+                <text x="205" y="335" text-anchor="middle" font-size="11">Ejemplos: almendras, nueces, pipas de girasol, linaza</text>
+                <!-- Grupo aceites -->
+                <rect x="420" y="260" width="350" height="160" rx="10" fill="#FFF9C4" stroke="#F9A825"/>
+                <text x="595" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#F57F17">🫒 Aceites vegetales</text>
+                <text x="595" y="310" text-anchor="middle" font-size="11">Vitamina E (tocoferol): aceite de oliva, girasol, germen de trigo</text>
+                <text x="595" y="335" text-anchor="middle" font-size="11">Ácidos grasos esenciales (vitamina F)</text>
+            </svg>
+            <p class="image-caption">Figura 2: Grupos de alimentos y sus principales micronutrientes.</p>
+        </div>
+    </section>
+
+    <!-- RECOMENDACIONES DIARIAS -->
+    <section class="topic-section animate-on-scroll">
+        <h2>📋 Ingestas diarias recomendadas (IDR)</h2>
+        <p>Las cantidades varían según edad, sexo y situación fisiológica (embarazo, lactancia). Valores orientativos para adolescentes y adultos:</p>
+        <div class="two-column">
+            <div>
+                <h4>Minerales (mg/día)</h4>
+                <ul>
+                    <li>Calcio: 1000-1300</li>
+                    <li>Fósforo: 700-1250</li>
+                    <li>Magnesio: 240-420</li>
+                    <li>Hierro: 8-15 (mujeres: 18)</li>
+                    <li>Zinc: 8-11</li>
+                    <li>Yodo: 150 µg</li>
+                    <li>Sodio: < 2000</li>
+                    <li>Potasio: 2600-3400</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Vitaminas</h4>
+                <ul>
+                    <li>A: 700-900 µg</li>
+                    <li>D: 15 µg (600 UI)</li>
+                    <li>E: 15 mg</li>
+                    <li>C: 65-90 mg</li>
+                    <li>B1: 1.1-1.2 mg</li>
+                    <li>B3: 14-16 mg</li>
+                    <li>B9: 400 µg</li>
+                    <li>B12: 2.4 µg</li>
+                </ul>
+            </div>
+        </div>
+        <div class="fun-fact">
+            <h4>💊 Suplementación</h4>
+            <p>En general, una dieta variada y equilibrada cubre las necesidades. Solo se recomienda suplementar en casos específicos (embarazo, vegetarianos estrictos, malabsorción, deficiencias diagnosticadas). El exceso de vitaminas liposolubles (A, D, E, K) puede ser tóxico porque se acumulan.</p>
+        </div>
+    </section>
+
+    <!-- ENFERMEDADES POR DEFICIENCIA Y EXCESO -->
+    <section class="topic-section animate-on-scroll">
+        <h2>⚠️ Consecuencias de la deficiencia y el exceso</h2>
+        <p>Tanto la falta como el exceso de micronutrientes pueden causar trastornos graves. Algunos ejemplos:</p>
+        <table class="comparison-table">
+            <thead><tr><th>Nutriente</th><th>Deficiencia</th><th>Toxicidad (exceso)</th></tr></thead>
+            <tbody>
+                <tr><td>Vitamina A</td><td>Ceguera nocturna, xeroftalmia</td><td>Hipervitaminosis A: daño hepático, teratogénico</td></tr>
+                <tr><td>Vitamina D</td><td>Raquitismo, osteomalacia</td><td>Hipercalcemia, calcificación de tejidos blandos</td></tr>
+                <tr><td>Hierro</td><td>Anemia ferropénica</td><td>Hemocromatosis (daño hepático y cardíaco)</td></tr>
+                <tr><td>Yodo</td><td>Bocio, hipotiroidismo</td><td>Hipertiroidismo (enfermedad de Basedow)</td></tr>
+                <tr><td>Sodio</td><td>Hiponatremia</td><td>Hipertensión, enfermedad cardiovascular</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- DATOS CURIOSOS -->
+    <section class="topic-section animate-on-scroll">
+        <h2>🤯 Datos curiosos sobre vitaminas y minerales</h2>
+        <div class="fun-fact">
+            <h4>¿Sabías que...?</h4>
+            <p>La vitamina D se llama la "vitamina del sol" porque la piel la sintetiza al exponerse a la radiación UVB. Bastan 15-20 minutos diarios en brazos y cara para producir suficiente vitamina D en primavera y verano.</p>
+        </div>
+        <div class="fun-fact">
+            <h4>¿Sabías que...?</h4>
+            <p>El <strong>hierro hemo</strong> (de carnes) se absorbe mucho mejor (25-30%) que el hierro no hemo (de vegetales, 5-10%). Tomar vitamina C junto a alimentos vegetales ricos en hierro mejora su absorción (ejemplo: lentejas con pimiento o zumo de naranja).</p>
+        </div>
+        <div class="fun-fact">
+            <h4>¿Sabías que...?</h4>
+            <p>La <strong>vitamina C</strong> se destruye fácilmente con el calor. Por eso, las frutas y verduras frescas o cocinadas al vapor conservan mejor su contenido.</p>
+        </div>
+        <div class="fun-fact">
+            <h4>¿Sabías que...?</h4>
+            <p>El <strong>selenio</strong> es un oligoelemento esencial con potente efecto antioxidante. Una sola nuez de Brasil puede aportar más del 100% de la ingesta diaria recomendada.</p>
+        </div>
+    </section>
+
+    <!-- LABORATORIO VIRTUAL SUGERIDO -->
+    <section class="topic-section animate-on-scroll">
+        <h2>🧪 Laboratorio virtual sugerido</h2>
+        <div class="highlight-box" style="border-left-color: #d4a373;">
+            <h4>🔬 Análisis de alimentos</h4>
+            <p>En nuestra sección de laboratorios virtuales encontrarás simulaciones para:</p>
+            <ul>
+                <li><strong>Determinación cualitativa de vitamina C:</strong> Titulación con yodo en zumos de frutas.</li>
+                <li><strong>Espectrofotometría de minerales:</strong> Cuantifica hierro y calcio en distintos alimentos.</li>
+                <li><strong>Tabla interactiva de composición nutricional:</strong> Compara el contenido de vitaminas y minerales de más de 100 alimentos.</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a href="laboratorios.html" style="color: var(--color-secundario); font-weight: 600;">Ir a Laboratorios Virtuales →</a></p>
+        </div>
+    </section>
+
+    <!-- MINI QUIZ -->
+    <section class="topic-section animate-on-scroll">
+        <h2>📝 Verifica tu aprendizaje</h2>
+        <div class="quiz-preview">
+            <h4>1. ¿Cuál de los siguientes es un mineral esencial para la formación de hemoglobina?</h4>
+            <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Hierro — Correcto! El hierro forma parte del grupo hemo de la hemoglobina.'">A) Hierro</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Calcio — Incorrecto. El calcio es para huesos y coagulación.'">B) Calcio</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='�️ Zinc — Incorrecto. El zinc interviene en el sistema inmune.'">C) Zinc</button>
+        </div>
+        <div class="quiz-preview">
+            <h4>2. ¿Qué vitamina se sintetiza en la piel con la exposición solar?</h4>
+            <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Vitamina D — Correcto! La 7‑deshidrocolesterol se convierte en vitamina D3 con luz UV.'">A) Vitamina D</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Vitamina C — Incorrecto. La vitamina C no se sintetiza en humanos.'">B) Vitamina C</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Vitamina A — Incorrecto. La vitamina A proviene de la dieta (retinol o carotenos).'">C) Vitamina A</button>
+        </div>
+        <div class="quiz-preview">
+            <h4>3. La deficiencia de yodo produce:</h4>
+            <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Bocio — Correcto! El agrandamiento de la tiroides es la manifestación más visible.'">A) Bocio</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Escorbuto — Incorrecto. El escorbuto es por falta de vitamina C.'">B) Escorbuto</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Pelagra — Incorrecto. La pelagra es por deficiencia de niacina (B3).'">C) Pelagra</button>
+        </div>
+        <div class="quiz-preview">
+            <h4>4. ¿Cuál de las siguientes vitaminas es liposoluble?</h4>
+            <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Vitamina E — Correcto! Las vitaminas A, D, E y K son liposolubles.'">A) Vitamina E</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Vitamina C — Incorrecto. La vitamina C es hidrosoluble.'">B) Vitamina C</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Vitamina B12 — Incorrecto. Todas las del complejo B son hidrosolubles.'">C) Vitamina B12</button>
+        </div>
+        <div class="quiz-preview">
+            <h4>5. ¿Qué alimento es la fuente más rica en calcio?</h4>
+            <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Queso y lácteos — Correcto! Los lácteos son la principal fuente de calcio biodisponible.'">A) Queso y lácteos</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Plátano — Incorrecto. El plátano es rico en potasio, no en calcio.'">B) Plátano</button>
+            <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Lentejas — Incorrecto. Las legumbres tienen más hierro y zinc que calcio.'">C) Lentejas</button>
+        </div>
+    </section>
+
+    <!-- NAVEGACIÓN -->
+    <section class="topic-section animate-on-scroll">
+        <h2>🔗 Continúa tu aprendizaje</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <a href="temas.html" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion);">
+                <span style="color: var(--color-secundario); font-weight: 600;">← Volver a</span>
+                <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Todos los Temas</h4>
+                <p style="color: var(--color-texto-claro); font-size: 0.9rem;">Explora más biología: sistemas, ecología y más.</p>
+            </a>
+            <a href="fotosintesis.html" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion);">
+                <span style="color: var(--color-secundario); font-weight: 600;">Tema anterior →</span>
+                <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Fotosíntesis</h4>
+                <p style="color: var(--color-texto-claro); font-size: 0.9rem;">El proceso que da vida a las plantas.</p>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <h3>Bio<span>Exploración</span></h3>
+            <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="temas.html">Temas</a></li>
+                <li><a href="laboratorios.html">Laboratorios</a></li>
+                <li><a href="sobre.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Áreas</h4>
+            <ul>
+                <li><a href="aparato-urinario.html">Cuerpo Humano</a></li>
+                <li><a href="fotosintesis.html">Plantas</a></li>
+                <li><a href="minerales-vitaminas.html">Nutrición</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 BioExploración. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

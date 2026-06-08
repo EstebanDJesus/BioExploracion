@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Respiratorio - BioExploración</title>
+    <meta name="description" content="Aprende todo sobre el Sistema Respiratorio: anatomía, mecanismo de respiración, intercambio gaseoso en alvéolos, volumen pulmonar y enfermedades respiratorias. Contenido para bachillerato.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Estilos específicos para páginas de tema */
+        .topic-hero {
+            background: linear-gradient(135deg, #1a472a, #2d6a4f, #40916c);
+            padding: 10rem 5% 5rem;
+            text-align: center;
+            color: var(--color-blanco);
+            position: relative;
+            overflow: hidden;
+        }
+        .topic-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .topic-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out; }
+        .topic-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 1rem auto 0; position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.2s both; }
+
+        .topic-content { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+
+        .topic-section { margin-bottom: 4rem; }
+        .topic-section h2 {
+            font-size: 2rem;
+            color: var(--color-primario);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--color-secundario);
+            display: inline-block;
+        }
+        .topic-section h3 {
+            font-size: 1.4rem;
+            color: var(--color-primario-claro);
+            margin: 2rem 0 1rem;
+        }
+        .topic-section p {
+            color: var(--color-texto-claro);
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+        .topic-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-texto-claro);
+        }
+        .topic-section ul li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        .topic-section ul li strong {
+            color: var(--color-primario);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-texto-claro);
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-container {
+            margin: 2rem 0;
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+            background: var(--color-blanco);
+            padding: 1rem;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: var(--radio-peq);
+            display: block;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(45,106,79,0.08), rgba(64,145,108,0.08));
+            border-left: 4px solid var(--color-secundario);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        .highlight-box h4 {
+            color: var(--color-primario);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(212,163,115,0.15), rgba(233,196,106,0.15));
+            border-left: 4px solid var(--color-acento);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        .fun-fact::before {
+            content: '💡 ';
+            font-size: 1.5rem;
+        }
+        .fun-fact h4 {
+            color: var(--color-primario);
+            display: inline;
+            font-size: 1.1rem;
+        }
+        .fun-fact p {
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--color-blanco);
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-claro));
+            color: var(--color-blanco);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-fondo-alt);
+            color: var(--color-texto-claro);
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: var(--color-fondo); }
+
+        .step-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--color-blanco);
+            border-radius: var(--radio);
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+        .step-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--sombra-media);
+        }
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-blanco);
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .step-content h4 {
+            color: var(--color-primario);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .step-content p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .organ-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .organ-card {
+            padding: 1.5rem;
+            background: var(--color-blanco);
+            border-radius: var(--radio);
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+        .organ-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
+        .organ-card h4 {
+            color: var(--color-primario);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .organ-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--color-texto-claro);
+        }
+
+        .quiz-preview {
+            background: var(--color-fondo);
+            padding: 2rem;
+            border-radius: var(--radio);
+            margin: 2rem 0;
+        }
+        .quiz-preview h4 {
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+        }
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.8rem;
+            background: var(--color-blanco);
+            border: 2px solid var(--color-fondo-alt);
+            border-radius: var(--radio-peq);
+            text-align: left;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transicion);
+        }
+        .quiz-option:hover {
+            border-color: var(--color-secundario);
+            background: rgba(64,145,108,0.05);
+        }
+
+        .breath-box {
+            background: linear-gradient(135deg, rgba(64,145,108,0.1), rgba(26,71,42,0.05));
+            border-radius: var(--radio);
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .breath-box::before {
+            content: '🫁';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 5rem;
+            opacity: 0.1;
+        }
+        .breath-box h4 {
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .stats-highlight {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-box {
+            background: var(--color-blanco);
+            border-radius: var(--radio);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
+        .stat-box .stat-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-secundario);
+            display: block;
+        }
+        .stat-box .stat-label {
+            font-size: 0.9rem;
+            color: var(--color-texto-claro);
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .two-column, .organ-grid, .stats-highlight { grid-template-columns: 1fr; }
+            .step-card { flex-direction: column; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <nav class="navbar scrolled" id="navbar">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Bio<span>Exploración</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="temas.html">Temas</a></li>
+            <li><a href="laboratorios.html">Laboratorios</a></li>
+            <li><a href="sobre.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+    </nav>
+
+    <header class="topic-hero">
+        <div style="display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; margin-bottom: 1.5rem;">
+            🫁 Sistemas del Cuerpo Humano • 1° Año
+        </div>
+        <h1>Sistema Respiratorio</h1>
+        <p>El aliento de la vida: descubre cómo tus pulmones capturan oxígeno, eliminan dióxido de carbono y mantienen a cada célula de tu cuerpo viva.</p>
+    </header>
+
+    <main class="topic-content">
+
+        <!-- INTRODUCCIÓN -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🫁 ¿Qué es el Sistema Respiratorio?</h2>
+            <p>
+                El <strong>sistema respiratorio</strong> es el conjunto de órganos encargados de capturar <strong>oxígeno</strong> del aire 
+                y expulsar <strong>dióxido de carbono</strong> (CO₂), un desecho metabólico producido por las células. 
+                Aunque parece simple —"inhalar y exhalar"— es un proceso extraordinariamente complejo que involucra 
+                anatomía, mecánica, química y fisiología celular.
+            </p>
+            <p>
+                Sin oxígeno, las células no pueden realizar la respiración celular, el proceso que genera ATP 
+                (la "moneda energética" del cuerpo). Una persona puede sobrevivir semanas sin comida, días sin agua, 
+                pero solo <strong>minutos sin respirar</strong>. Eso da una idea de la vital importancia de este sistema.
+            </p>
+
+            <div class="highlight-box">
+                <h4>🎯 Objetivos de Aprendizaje</h4>
+                <p>Al finalizar este tema serás capaz de: identificar los órganos del sistema respiratorio y sus funciones, explicar el mecanismo de la inspiración y la espiración, describir el intercambio gaseoso en los alvéolos, comprender los volúmenes y capacidades pulmonares, y reconocer las principales enfermedades respiratorias y sus factores de riesgo.</p>
+            </div>
+        </section>
+
+        <!-- ANATOMÍA DEL SISTEMA RESPIRATORIO -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🗺️ Anatomía: El Mapa del Sistema Respiratorio</h2>
+            <p>
+                El sistema respiratorio se divide en dos grandes grupos: las <strong>vías respiratorias superiores</strong> 
+                (nariz, faringe, laringe) y las <strong>vías respiratorias inferiores</strong> (tráquea, bronquios, bronquiolos, pulmones y alvéolos). 
+                También incluye el <strong>diafragma</strong>, el músculo principal de la respiración.
+            </p>
+
+            <div class="image-container">
+                <img src="images/aparato-respiratorio-completo.png" alt="Diagrama completo del aparato respiratorio mostrando nariz, senos paranasales, laringe, tráquea, pulmones, bronquios y alvéolos">
+            </div>
+            <p class="image-caption">Figura 1: Aparato respiratorio completo con vías aéreas superiores e inferiores. Fuente: Wikipedia.</p>
+
+            <div class="image-container">
+                <img src="images/partes-sistema-respiratorio.png" alt="Partes del sistema respiratorio: nariz, faringe, laringe, tráquea, pulmones, bronquios, bronquiolos, alvéolos y diafragma">
+            </div>
+            <p class="image-caption">Figura 2: Partes principales del sistema respiratorio con etiquetas en español. Fuente: ABC Color.</p>
+
+            <div class="image-container">
+                <img src="images/esquema-sistema-respiratorio.png" alt="Esquema del sistema respiratorio: fosas nasales, faringe, tráquea, bronquios, bronquiolos, alvéolos, pulmón derecho e izquierdo">
+            </div>
+            <p class="image-caption">Figura 3: Esquema simplificado del sistema respiratorio con nomenclatura en español. Fuente: Prixz.</p>
+
+            <h3>Órganos del Sistema Respiratorio</h3>
+
+            <div class="organ-grid">
+                <div class="organ-card">
+                    <h4>👃 Nariz y Fosas Nasales</h4>
+                    <p>Entrada principal del aire. Los pelos nasales y la mucosa filtran, humidifican y calientan el aire. Los senos paranasales (cavidades llenas de aire en los huesos del cráneo) amplifican la voz y reducen el peso del cráneo.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>👄 Faringe</h4>
+                    <p>Tubo muscular de ~12 cm que conecta nariz/boca con laringe y esófago. Es un cruce compartido entre sistema respiratorio y digestivo. La epiglotis evita que los alimentos entren a la laringe al tragar.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🗣️ Laringe</h4>
+                    <p>Conocida como la "caja de la voz". Contiene las <strong>cuerdas vocales</strong> (pliegues que vibran al pasar el aire, produciendo sonido). También protege la entrada a la tráquea con la epiglotis.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🌬️ Tráquea</h4>
+                    <p>Tubo de ~10-12 cm y 2 cm de diámetro con <strong>anillos de cartílago</strong> en forma de C que mantienen la vía abierta. Está recubierta de cilios y células productoras de mucus que atrapar partículas extrañas.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🌳 Bronquios y Bronquiolos</h4>
+                    <p>La tráquea se divide en dos <strong>bronquios</strong> (uno para cada pulmón). Cada bronquio se ramifica en bronquiolos más pequeños, formando un árbol invertido de ~23 generaciones de divisiones. Los bronquiolos terminales son del tamaño de un cabello humano.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🫁 Pulmones</h4>
+                    <p>Órganos esponjosos ubicados en la cavidad torácica, protegidos por las costillas. El pulmón derecho tiene 3 lóbulos; el izquierdo, 2 (para dejar espacio al corazón). Juntos pesan ~1.3 kg y contienen ~300 millones de alvéolos.</p>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Si se desplegaran todos los alvéolos de tus pulmones y se extendieran sobre una superficie plana, cubrirían aproximadamente <strong>70-100 m²</strong> —el tamaño de una cancha de tenis. Esta enorme superficie es necesaria para maximizar el intercambio de gases con la sangre.</p>
+            </div>
+        </section>
+
+        <!-- MECANISMO DE LA RESPIRACIÓN -->
+        <section class="topic-section animate-on-scroll">
+            <h2>💨 Mecanismo de la Respiración: Inspiración y Espiración</h2>
+            <p>
+                La respiración no es un proceso pasivo: requiere la acción coordinada de músculos, especialmente el <strong>diafragma</strong> 
+                y los <strong>músculos intercostales</strong> (entre las costillas). La respiración se divide en dos fases: 
+                <strong>inspiración</strong> (aire entra) y <strong>espiración</strong> (aire sale).
+            </p>
+
+            <div class="image-container">
+                <img src="images/inspiracion-espiracion.png" alt="Diagrama comparativo de inspiración y espiración mostrando movimiento del diafragma, expansión y contracción de pulmones">
+            </div>
+            <p class="image-caption">Figura 4: Inspiración (diafragma se contrae y baja, pulmones se expanden) vs. Espiración (diafragma se relaja y sube, pulmones se contraen). Fuente: PNTIC MEC.</p>
+
+            <div class="image-container">
+                <img src="images/mecanismo-respiracion.png" alt="Mecanismo de respiración con esquema anatómico: costillas, esternón, diafragma, pulmones en inspiración y espiración">
+            </div>
+            <p class="image-caption">Figura 5: Mecanismo de la respiración con detalle de costillas, esternón y diafragma. Fuente: Dreamstime.</p>
+
+            <h3>La Inspiración (Inhalación)</h3>
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>☀️ Contracción del Diafragma</h4>
+                    <p>El <strong>diafragma</strong> (músculo en forma de cúpula entre tórax y abdomen) se <strong>contrae y aplana</strong>, descendiendo hacia el abdomen. Esto aumenta el volumen de la cavidad torácica.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>📐 Elevación de las Costillas</h4>
+                    <p>Los <strong>músculos intercostales externos</strong> elevan las costillas y el esternón hacia arriba y hacia afuera, expandiendo aún más el tórax. Esto es especialmente evidente en respiración profunda o ejercicio.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>🫁 Expansión de los Pulmones</h4>
+                    <p>Al aumentar el volumen torácico, la <strong>presión intrapulmonar disminuye</strong> (ley de Boyle: presión ∝ 1/volumen). El aire atmosférico (a mayor presión) fluye hacia los pulmones para equilibrar la presión.</p>
+                </div>
+            </div>
+
+            <h3>La Espiración (Exhalación)</h3>
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>🌙 Relajación del Diafragma</h4>
+                    <p>El diafragma se <strong>relaja y vuelve a su forma de cúpula</strong>, ascendiendo. Los músculos intercostales se relajan y las costillas descienden.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>📉 Disminución del Volumen Torácico</h4>
+                    <p>La cavidad torácica se reduce de tamaño. Los pulmones, por elasticidad, se <strong>contraen</strong> y empujan el aire hacia afuera.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>💨 Salida del Aire</h4>
+                    <p>La presión intrapulmonar aumenta por encima de la atmosférica, expulsando el aire rico en CO₂. En reposo, la espiración es <strong>pasiva</strong> (no requiere energía muscular); en ejercicio, los músculos intercostales internos y abdominales participan activamente.</p>
+                </div>
+            </div>
+
+            <div class="breath-box">
+                <h4>📊 Volumen y Capacidades Pulmonares</h4>
+                <p style="margin-bottom: 0.8rem;"><strong>Volumen corriente (VC):</strong> ~500 mL —aire que entra/sale en una respiración normal.</p>
+                <p style="margin-bottom: 0.8rem;"><strong>Volumen de reserva inspiratoria (VRI):</strong> ~3,000 mL —aire adicional que puedes inhalar forzosamente.</p>
+                <p style="margin-bottom: 0.8rem;"><strong>Volumen de reserva espiratoria (VRE):</strong> ~1,100 mL —aire adicional que puedes exhalar forzosamente.</p>
+                <p style="margin-bottom: 0.8rem;"><strong>Volumen residual (VR):</strong> ~1,200 mL —aire que siempre permanece en los pulmones (evita colapso).</p>
+                <p style="margin-bottom: 0.8rem;"><strong>Capacidad vital (CV):</strong> ~4,600 mL —máximo aire que puedes mover (VC + VRI + VRE).</p>
+                <p style="margin: 0;"><strong>Capacidad pulmonar total (CPT):</strong> ~5,800 mL —aire total que cabe en los pulmones (CV + VR).</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Un adulto promedio respira aproximadamente <strong>20,000 veces al día</strong>, moviendo unos <strong>11,000 litros de aire</strong>. Durante el ejercicio intenso, la frecuencia respiratoria puede aumentar hasta <strong>40-60 respiraciones por minuto</strong> y el volumen corriente puede duplicarse o triplicarse. Un atleta de élite puede mover hasta <strong>150 litros de aire por minuto</strong> durante el esfuerzo máximo.</p>
+            </div>
+        </section>
+
+        <!-- INTERCAMBIO GASEOSO -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🔄 Intercambio Gaseoso: Donde el Aire se Convierte en Vida</h2>
+            <p>
+                El <strong>intercambio gaseoso</strong> es el proceso mediante el cual el oxígeno pasa del aire alveolar a la sangre 
+                y el dióxido de carbono pasa de la sangre al aire alveolar. Ocurre en los <strong>alvéolos</strong>, 
+                pequeños sacos de aire rodeados por una red densa de capilares sanguíneos.
+            </p>
+
+            <div class="image-container">
+                <img src="images/intercambio-alveolos.png" alt="Intercambio de oxígeno y dióxido de carbono en los alvéolos: glóbulos rojos, capilares, pared alveolar">
+            </div>
+            <p class="image-caption">Figura 6: Intercambio gaseoso en los alvéolos: O₂ entra a la sangre, CO₂ sale. Fuente: Magnific/Freepik.</p>
+
+            <div class="image-container">
+                <img src="images/intercambio-gaseoso.png" alt="Intercambio gaseoso completo: aire inspirado, aire espirado, capilares, alvéolos, O₂ y CO₂">
+            </div>
+            <p class="image-caption">Figura 7: Diagrama del intercambio gaseoso mostrando difusión de O₂ y CO₂ entre alvéolos y capilares. Fuente: Pictoeduca.</p>
+
+            <h3>¿Cómo Funciona el Intercambio?</h3>
+            <p>
+                El intercambio ocurre por <strong>difusión simple</strong>: las moléculas se mueven espontáneamente desde zonas de 
+                alta concentración a zonas de baja concentración, a través de la <strong>membrana respiratoria</strong> 
+                (pared alveolar + pared capilar + líquido intersticial).
+            </p>
+
+            <div class="two-column">
+                <div>
+                    <h3>🔵 Oxígeno (O₂)</h3>
+                    <ul>
+                        <li>El aire alveolar tiene ~104 mmHg de O₂ (vs. 160 mmHg en aire atmosférico).</li>
+                        <li>La sangre venosa llega con ~40 mmHg de O₂.</li>
+                        <li>El O₂ difunde desde los alvéolos (alta presión) hacia la sangre (baja presión).</li>
+                        <li>Se une a la <strong>hemoglobina</strong> de los glóbulos rojos, formando oxihemoglobina.</li>
+                        <li>La sangre arterial sale con ~100 mmHg de O₂.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🔴 Dióxido de Carbono (CO₂)</h3>
+                    <ul>
+                        <li>La sangre venosa llega con ~46 mmHg de CO₂.</li>
+                        <li>El aire alveolar tiene ~40 mmHg de CO₂.</li>
+                        <li>El CO₂ difunde desde la sangre (alta presión) hacia los alvéolos (baja presión).</li>
+                        <li>Se transporta en sangre de 3 formas: disuelto en plasma (7%), como bicarbonato (70%), y unido a hemoglobina (23%).</li>
+                        <li>La sangre arterial sale con ~40 mmHg de CO₂.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🧪 La Membrana Respiratoria</h4>
+                <p>La barrera que separa el aire alveolar de la sangre capilar tiene solo <strong>0.5 micrómetros de grosor</strong> —menos que el grosor de una célula. Está compuesta por: <strong>1)</strong> fluido surfactante (reduce tensión superficial), <strong>2)</strong> células epiteliales alveolares tipo I, <strong>3)</strong> membrana basal, <strong>4)</strong> endotelio capilar. Esta delgadez extrema permite que el intercambio sea extremadamente rápido: el O₂ tarda solo <strong>0.25 segundos</strong> en cruzarla.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Los <strong>alvéolos</strong> están recubiertos de una sustancia llamada <strong>surfactante pulmonar</strong>, una mezcla de lípidos y proteínas que reduce la tensión superficial del agua en su interior. Sin surfactante, los alvéolos se colapsarían como globos desinflados después de cada espiración. Los bebés prematuros a veces necesitan surfactante artificial porque sus pulmones aún no lo producen suficientemente.</p>
+            </div>
+        </section>
+
+        <!-- CONTROL DE LA RESPIRACIÓN -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🧠 Control de la Respiración: El Cerebro al Mando</h2>
+            <p>
+                Aunque podemos controlar conscientemente nuestra respiración (por ejemplo, aguantar la respiración), 
+                la mayor parte del tiempo es un proceso <strong>involuntario</strong> regulado por el <strong>sistema nervioso</strong>. 
+                El centro respiratorio está ubicado en el <strong>bulbo raquídeo</strong> y la <strong>protuberancia</strong> del tronco encefálico.
+            </p>
+
+            <h3>Centros Respiratorios del Cerebro</h3>
+            <div class="organ-grid">
+                <div class="organ-card">
+                    <h4>🎯 Centro Respiratorio Dorsal (Bulbo Raquídeo)</h4>
+                    <p>Genera el ritmo básico de respiración. Envía señales que activan los músculos inspiratorios (diafragma e intercostales). Es el "metrónomo" de la respiración.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🎯 Centro Respiratorio Ventral (Bulbo Raquídeo)</h4>
+                    <p>Controla la espiración forzada. Se activa durante el ejercicio intenso, enviando señales a los músculos abdominales e intercostales internos para expulsar el aire con fuerza.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🎯 Centros de la Protuberancia (Puente de Varolio)</h4>
+                    <p>Modulan la intensidad y ritmo de la respiración. El centro pneumotáxico limita la inspiración (evita que los pulmones se sobreinflen). El centro apneústico prolonga la inspiración.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🎯 Quimiorreceptores</h4>
+                    <p>Detectan cambios en la sangre: <strong>quimiorreceptores centrales</strong> (en el bulbo, sensibles a pH del líquido cefalorraquídeo) y <strong>quimiorreceptores periféricos</strong> (en las arterias carótidas y aórtica, sensibles a O₂, CO₂ y pH sanguíneo).</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>⚡ El Reflejo de la Respiración</h4>
+                <p>El principal estímulo para respirar no es la falta de oxígeno, sino el <strong>aumento de CO₂</strong> en la sangre. Cuando el CO₂ sube, el pH sanguíneo baja (se vuelve más ácido) y los quimiorreceptores envían señales al bulbo raquídeo para aumentar la frecuencia y profundidad de la respiración. Por eso, cuando corres, no sientes "falta de aire" por falta de O₂, sino por acumulación de CO₂. Esto también explica por qué es difícil aguantar la respiración hasta desmayarse: cuando el CO₂ alcanza un nivel crítico, el cerebro "toma el control" y fuerza una inspiración involuntaria.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>La <strong>respiración de Cheyne-Stokes</strong> es un patrón respiratorio donde la respiración se vuelve progresivamente más profunda y rápida, luego más lenta y superficial, hasta que se detiene brevemente (apnea), y el ciclo se repite. Se observa en pacientes con insuficiencia cardíaca, daño cerebral o en altitudes extremas. Charles Darwin sufrió este patrón en sus últimos años.</p>
+            </div>
+        </section>
+
+        <!-- ENFERMEDADES RESPIRATORIAS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>⚠️ Enfermedades del Sistema Respiratorio</h2>
+            <p>
+                Las enfermedades respiratorias son una de las principales causas de morbilidad y mortalidad en el mundo. 
+                Muchas son prevenibles con hábitos saludables y evitando la exposición a contaminantes.
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Enfermedad</th>
+                        <th>Descripción</th>
+                        <th>Causas / Factores de Riesgo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Asma</strong></td>
+                        <td>Inflamación crónica de las vías respiratorias que causa broncoespasmos (contracción de bronquios), dificultando la respiración.</td>
+                        <td>Alergenos (polen, ácaros), contaminación, ejercicio, estrés. Tiene componente genético.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bronquitis crónica</strong></td>
+                        <td>Inflamación prolongada de los bronquios con producción excesiva de mucus. Forma parte de la EPOC.</td>
+                        <td>Tabaquismo (principal), contaminación del aire, infecciones respiratorias repetidas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enfisema</strong></td>
+                        <td>Destrucción de las paredes alveolares, reduciendo la superficie de intercambio gaseoso. Forma parte de la EPOC.</td>
+                        <td>Tabaquismo (90% de los casos), exposición a polvo y químicos, deficiencia de alfa-1 antitripsina.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Neumonía</strong></td>
+                        <td>Infección de los alvéolos (bacteriana, viral o fúngica) que se llenan de líquido o pus, dificultando el intercambio de gases.</td>
+                        <td>Bacterias (Streptococcus pneumoniae), virus (gripe, COVID-19), inmunodeficiencia, edad avanzada.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tuberculosis (TB)</strong></td>
+                        <td>Infección bacteriana (Mycobacterium tuberculosis) que afecta principalmente los pulmones. Puede latente o activa.</td>
+                        <td>Contacto cercano con infectados, sistemas inmunitarios debilitados, hacinamiento, malnutrición.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cáncer de pulmón</strong></td>
+                        <td>Crecimiento descontrolado de células en los pulmones. El tipo más común es el carcinoma de células pequeñas y no pequeñas.</td>
+                        <td>Tabaquismo (85% de los casos), exposición al radón, asbesto, contaminación del aire, historia familiar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>COVID-19</strong></td>
+                        <td>Enfermedad viral causada por SARS-CoV-2 que puede causar neumonía viral, síndrome de dificultad respiratoria aguda (SDRA) y daño multisistémico.</td>
+                        <td>Virus transmitido por gotículas respiratorias. Factores de riesgo: edad avanzada, obesidad, comorbilidades.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apnea del sueño</strong></td>
+                        <td>Interrupciones repetidas de la respiración durante el sueño por obstrucción de las vías respiratorias (apnea obstructiva) o falla del centro respiratorio (apnea central).</td>
+                        <td>Obesidad, anatomía de vías respiratorias, edad avanzada, consumo de alcohol/sedantes.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="two-column">
+                <div>
+                    <h3>🟢 Prevención</h3>
+                    <ul>
+                        <li><strong>No fumar:</strong> El tabaquismo es el factor de riesgo #1 para EPOC, cáncer de pulmón y bronquitis crónica.</li>
+                        <li><strong>Vacunación:</strong> Vacunas contra influenza, neumonía y COVID-19 reducen infecciones graves.</li>
+                        <li><strong>Ejercicio aeróbico:</strong> Fortalece los músculos respiratorios y mejora la capacidad pulmonar.</li>
+                        <li><strong>Higiene:</strong> Lavarse las manos, cubrirse al estornudar, evitar contacto cercano con enfermos.</li>
+                        <li><strong>Calidad del aire:</strong> Evitar áreas con alta contaminación; usar purificadores en interiores.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🔵 Señales de Alerta</h3>
+                    <ul>
+                        <li><strong>Dificultad para respirar (disnea):</strong> Especialmente en reposo o al acostarse.</li>
+                        <li><strong>Tos persistente:</strong> Más de 3 semanas, especialmente con sangre (hemoptisis).</li>
+                        <li><strong>Dolor torácico:</strong> Al respirar profundamente puede indicar pleuritis o neumonía.</li>
+                        <li><strong>Sibilancias:</strong> Sonido silbante al exhalar, típico de asma o bronquitis.</li>
+                        <li><strong>Cianosis:</strong> Labios o uñas azulados por falta de oxígeno en sangre.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El <strong>tabaquismo</strong> es responsable de aproximadamente <strong>8 millones de muertes al año</strong> en el mundo, de las cuales ~1.3 millones son de no fumadores expuestos al humo de segunda mano. Un solo cigarrillo contiene más de <strong>7,000 químicos</strong>, de los cuales al menos 70 son carcinógenos conocidos. Los pulmones de un fumador pueden recuperar parte de su función si deja de fumar antes de los 30 años, pero algunos daños son irreversibles.</p>
+            </div>
+        </section>
+
+        <!-- RESPIRACIÓN CELULAR -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🔬 Respiración Celular: El Destino Final del Oxígeno</h2>
+            <p>
+                El sistema respiratorio no trabaja solo: su función final es proveer oxígeno a las células para la 
+                <strong>respiración celular</strong>, el proceso que genera ATP. Sin este proceso, las células no podrían 
+                realizar ninguna función vital.
+            </p>
+
+            <div class="breath-box">
+                <h4>⚡ La Ecuación de la Respiración Celular</h4>
+                <p style="text-align: center; font-family: 'Poppins', sans-serif; font-size: 1.1rem; margin: 1rem 0;">
+                    C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + <strong>ATP (energía)</strong>
+                </p>
+                <p style="text-align: center; font-size: 0.95rem; color: var(--color-texto-claro); margin: 0;">
+                    Glucosa + Oxígeno → Dióxido de carbono + Agua + Energía utilizable
+                </p>
+            </div>
+
+            <p>
+                La respiración celular ocurre en tres etapas principales dentro de las células:
+            </p>
+            <ul>
+                <li><strong>Glicólisis (citoplasma):</strong> La glucosa se divide en dos moléculas de piruvato, generando 2 ATP y NADH. No requiere oxígeno.</li>
+                <li><strong>Ciclo de Krebs (mitocondria):</strong> El piruvato se descompone completamente en CO₂, generando NADH, FADH₂ y 2 ATP más. Requiere oxígeno indirectamente.</li>
+                <li><strong>Cadena de transporte de electrones (mitocondria):</strong> El O₂ actúa como <strong>aceptor final de electrones</strong>, combinándose con H⁺ para formar agua. Genera ~34 ATP —la mayor parte de la energía.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>🔗 Conexión con el Sistema Circulatorio</h4>
+                <p>El sistema respiratorio y el circulatorio trabajan en equipo inseparable: los pulmones oxigenan la sangre, y el corazón la bombea a las células. Las células usan el O₂ para la respiración celular y liberan CO₂ como desecho. El CO₂ retorna por venas al corazón, que lo envía de vuelta a los pulmones para ser exhalado. Este ciclo se repite <strong>24 horas al día, 7 días a la semana</strong>, desde antes de que nacieras hasta tu último aliento.</p>
+            </div>
+        </section>
+
+        <!-- DATOS CURIOSOS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🤯 Datos Curiosos sobre tu Respiración</h2>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El aire que exhalas contiene aproximadamente <strong>16% de oxígeno</strong> (vs. 21% en el aire atmosférico) y <strong>4-5% de dióxido de carbono</strong> (vs. 0.04% en el aire). Eso significa que tus pulmones <strong>no extraen todo el oxígeno</strong> del aire: solo capturan lo que necesitan. Por eso, la respiración boca a boca (RCP) puede salvar vidas: el aire exhalado aún tiene suficiente oxígeno para mantener a otra persona con vida.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Los pulmones son los <strong>únicos órganos que pueden flotar en agua</strong> gracias a los millones de alvéolos llenos de aire. Los patólogos forenses usan esta propiedad para determinar si un bebé nació vivo (pulmones flotan) o muerto (pulmones se hunden). Los pulmones de un fumador, sin embargo, pueden perder esta capacidad debido a la acumulación de alquitrán y fluidos.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El <strong>estornudo</strong> puede expulsar partículas a una velocidad de <strong>160 km/h</strong> y proyectar gotículas hasta <strong>8 metros de distancia</strong>. El cuerpo lo activa para expulsar irritantes de las vías respiratorias. Durante un estornudo, el corazón no "se detiene" como dicen los mitos urbanos, pero la presión torácica aumenta drásticamente, lo que puede alterar momentáneamente el flujo sanguíneo.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>La <strong>nariz derecha e izquierda</strong> no funcionan igual simultáneamente. El cuerpo alterna el flujo de aire predominante entre una fosa nasal y otra cada <strong>2-3 horas</strong> en un ciclo llamado <strong>"ciclo nasal"</strong> o ritmo nasal. Esto mantiene húmedas las fosas nasales y evita que se sequen por uso continuo. También explica por qué a veces una nariz está más "tapada" que la otra.</p>
+            </div>
+        </section>
+
+        <!-- MINI QUIZ -->
+        <section class="topic-section animate-on-scroll">
+            <h2>📝 Verifica tu Aprendizaje</h2>
+            <p>Responde estas preguntas para comprobar lo que has aprendido. (Las respuestas se mostrarán al hacer clic)</p>
+
+            <div class="quiz-preview">
+                <h4>1. ¿Cuál es el principal músculo responsable de la inspiración?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Diafragma — Correcto! El diafragma se contrae y aplana, aumentando el volumen torácico y permitiendo que el aire entre a los pulmones.'">A) Diafragma</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Corazón — Incorrecto. El corazón es un músculo cardíaco que bombea sangre, no aire.'">B) Corazón</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Estómago — Incorrecto. El estómago es parte del sistema digestivo y no participa en la respiración.'">C) Estómago</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>2. ¿En qué estructura ocurre el intercambio de gases (O₂ y CO₂)?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Tráquea — Incorrecto. La tráquea es un conducto que transporta aire, pero no tiene vasos sanguíneos para intercambio.'">A) Tráquea</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Bronquios — Incorrecto. Los bronquios son conductos que distribuyen el aire, pero el intercambio no ocurre allí.'">B) Bronquios</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Alvéolos — Correcto! Los alvéolos son sacos de aire rodeados por capilares donde el O₂ pasa a la sangre y el CO₂ sale de ella por difusión.'">C) Alvéolos</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>3. ¿Qué gas es el principal estímulo para aumentar la frecuencia respiratoria?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Oxígeno (O₂) — Incorrecto. Aunque necesitamos O₂, el cuerpo no detecta su disminución directamente para regular la respiración.'">A) Oxígeno (O₂)</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Dióxido de carbono (CO₂) — Correcto! Los quimiorreceptores detectan el aumento de CO₂ (y la disminución de pH) y envían señales al cerebro para respirar más rápido y profundo.'">B) Dióxido de carbono (CO₂)</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Nitrógeno (N₂) — Incorrecto. El nitrógeno es inerte y no participa en la regulación de la respiración.'">C) Nitrógeno (N₂)</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>4. ¿Cuál es el principal factor de riesgo para el cáncer de pulmón?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Consumo de alcohol — Incorrecto. Aunque el alcohol causa otros cánceres, no es el principal factor para cáncer de pulmón.'">A) Consumo de alcohol</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Tabaquismo — Correcto! El tabaquismo es responsable del ~85% de los casos de cáncer de pulmón. Contiene más de 70 carcinógenos conocidos.'">B) Tabaquismo</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Dieta alta en grasas — Incorrecto. La dieta no está directamente relacionada con el cáncer de pulmón.'">C) Dieta alta en grasas</button>
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN ENTRE TEMAS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🔗 Continúa tu Aprendizaje</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <a href="temas.html" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion); border: 2px solid transparent;">
+                    <span style="color: var(--color-secundario); font-weight: 600; font-size: 0.9rem;">← Volver a</span>
+                    <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Todos los Temas</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem; margin: 0;">Explora las 6 áreas de biología disponibles.</p>
+                </a>
+                <a href="sistema-circulatorio.html" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion); border: 2px solid transparent;">
+                    <span style="color: var(--color-secundario); font-weight: 600; font-size: 0.9rem;">← Tema anterior</span>
+                    <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Sistema Circulatorio</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem; margin: 0;">El corazón, la sangre y los vasos sanguíneos.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Bio<span>Exploración</span></h3>
+                <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="temas.html">Temas</a></li>
+                    <li><a href="laboratorios.html">Laboratorios</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Áreas</h4>
+                <ul>
+                    <li><a href="#">Cuerpo Humano</a></li>
+                    <li><a href="#">Plantas</a></li>
+                    <li><a href="#">Ecología</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BioExploración. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

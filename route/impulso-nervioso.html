@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulso Nervioso - BioExploración</title>
+    <meta name="description" content="Aprende sobre el impulso nervioso: estructura de la neurona, potencial de acción, sinapsis y neurotransmisores. Contenido para bachillerato.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .topic-hero {
+            background: linear-gradient(135deg, #1a472a, #2d6a4f, #40916c);
+            padding: 10rem 5% 5rem;
+            text-align: center;
+            color: var(--color-blanco);
+            position: relative;
+            overflow: hidden;
+        }
+        .topic-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .topic-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out; }
+        .topic-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 1rem auto 0; position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.2s both; }
+
+        .topic-content { max-width: 900px; margin: 0 auto; padding: 4rem 5%; }
+        .topic-section { margin-bottom: 4rem; }
+        .topic-section h2 {
+            font-size: 2rem;
+            color: var(--color-primario);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--color-secundario);
+            display: inline-block;
+        }
+        .topic-section h3 {
+            font-size: 1.4rem;
+            color: var(--color-primario-claro);
+            margin: 2rem 0 1rem;
+        }
+        .topic-section p {
+            color: var(--color-texto-claro);
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+        .topic-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-texto-claro);
+        }
+        .topic-section ul li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        .topic-section ul li strong { color: var(--color-primario); }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-texto-claro);
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .image-container {
+            margin: 2rem 0;
+            border-radius: var(--radio);
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+            background: var(--color-blanco);
+            padding: 1rem;
+        }
+        .image-container img { width: 100%; border-radius: var(--radio-peq); display: block; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(45,106,79,0.08), rgba(64,145,108,0.08));
+            border-left: 4px solid var(--color-secundario);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        .highlight-box h4 { color: var(--color-primario); margin-bottom: 0.8rem; font-size: 1.1rem; }
+        .highlight-box p { margin: 0; font-size: 1rem; }
+
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(212,163,115,0.15), rgba(233,196,106,0.15));
+            border-left: 4px solid var(--color-acento);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+        }
+        .fun-fact::before { content: '💡 '; font-size: 1.5rem; }
+        .fun-fact h4 { color: var(--color-primario); display: inline; font-size: 1.1rem; }
+        .fun-fact p { margin-top: 0.5rem; margin-bottom: 0; }
+
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+
+        .comparison-table {
+            width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+            background: var(--color-blanco); border-radius: var(--radio);
+            overflow: hidden; box-shadow: var(--sombra-suave);
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-claro));
+            color: var(--color-blanco); padding: 1rem; text-align: left; font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 1rem; border-bottom: 1px solid var(--color-fondo-alt);
+            color: var(--color-texto-claro);
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table tr:hover td { background: var(--color-fondo); }
+
+        .step-card {
+            display: flex; gap: 1.5rem; align-items: flex-start;
+            margin-bottom: 2rem; padding: 1.5rem;
+            background: var(--color-blanco); border-radius: var(--radio);
+            box-shadow: var(--sombra-suave); transition: var(--transicion);
+        }
+        .step-card:hover { transform: translateX(10px); box-shadow: var(--sombra-media); }
+        .step-number {
+            min-width: 50px; height: 50px;
+            background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: var(--color-blanco); font-weight: 700; font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .step-content h4 { color: var(--color-primario); margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .step-content p { margin: 0; font-size: 0.95rem; }
+
+        .organ-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 2rem 0;
+        }
+        .organ-card {
+            padding: 1.5rem; background: var(--color-blanco); border-radius: var(--radio);
+            box-shadow: var(--sombra-suave); transition: var(--transicion);
+        }
+        .organ-card:hover { transform: translateY(-5px); box-shadow: var(--sombra-media); }
+        .organ-card h4 { color: var(--color-primario); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .organ-card p { margin: 0; font-size: 0.95rem; color: var(--color-texto-claro); }
+
+        .quiz-preview {
+            background: var(--color-fondo); padding: 2rem; border-radius: var(--radio); margin: 2rem 0;
+        }
+        .quiz-preview h4 { color: var(--color-primario); margin-bottom: 1rem; }
+        .quiz-option {
+            display: block; width: 100%; padding: 1rem 1.5rem; margin-bottom: 0.8rem;
+            background: var(--color-blanco); border: 2px solid var(--color-fondo-alt);
+            border-radius: var(--radio-peq); text-align: left; cursor: pointer;
+            font-family: 'Inter', sans-serif; font-size: 1rem; transition: var(--transicion);
+        }
+        .quiz-option:hover { border-color: var(--color-secundario); background: rgba(64,145,108,0.05); }
+
+        .speed-box {
+            background: linear-gradient(135deg, rgba(26,71,42,0.9), rgba(45,106,79,0.9));
+            color: var(--color-blanco); padding: 2rem; border-radius: var(--radio);
+            margin: 2rem 0; text-align: center;
+        }
+        .speed-box .speed-value {
+            font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 800;
+            color: var(--color-acento-claro); display: block;
+        }
+        .speed-box .speed-label { font-size: 1rem; opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .two-column, .organ-grid { grid-template-columns: 1fr; }
+            .step-card { flex-direction: column; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <nav class="navbar scrolled" id="navbar">
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">Bio<span>Exploración</span></div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="temas.html">Temas</a></li>
+            <li><a href="laboratorios.html">Laboratorios</a></li>
+            <li><a href="sobre.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">☰</button>
+    </nav>
+
+    <header class="topic-hero">
+        <div style="display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.9rem; margin-bottom: 1.5rem;">
+            🧠 Sistemas del Cuerpo Humano • 1° Año
+        </div>
+        <h1>Impulso Nervioso</h1>
+        <p>La electricidad de la vida: descubre cómo las neuronas transmiten señales eléctricas y químicas a velocidades increíbles para controlar cada función de tu cuerpo.</p>
+    </header>
+
+    <main class="topic-content">
+
+        <!-- INTRODUCCIÓN -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🧠 ¿Qué es el Impulso Nervioso?</h2>
+            <p>
+                El <strong>impulso nervioso</strong> es una señal eléctrica que viaja a lo largo de las <strong>neuronas</strong> 
+                (células nerviosas) y permite la comunicación entre diferentes partes del cuerpo. Es el lenguaje interno 
+                del sistema nervioso: gracias a él puedes mover un dedo, sentir el calor de una llama, recordar tu nombre 
+                o latir el corazón sin pensarlo.
+            </p>
+            <p>
+                Este impulso no es como la corriente de un cable de cobre. Es un fenómeno bioeléctrico basado en el 
+                movimiento controlado de iones (partículas cargadas) a través de la membrana celular de la neurona. 
+                Cuando una neurona se activa, genera un <strong>potencial de acción</strong>: una onda eléctrica que 
+                recorre su axón a velocidades que pueden superar los <strong>120 metros por segundo</strong>.
+            </p>
+
+            <div class="highlight-box">
+                <h4>🎯 Objetivos de Aprendizaje</h4>
+                <p>Al finalizar este tema serás capaz de: describir la estructura de una neurona y la función de cada parte, explicar cómo se genera un potencial de acción, diferenciar entre potencial de reposo y potencial de acción, comprender el proceso de la sinapsis y el papel de los neurotransmisores, y relacionar el impulso nervioso con las funciones del sistema nervioso.</p>
+            </div>
+        </section>
+
+        <!-- LA NEURONA -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🔬 La Neurona: La Célula de la Comunicación</h2>
+            <p>
+                La <strong>neurona</strong> es la unidad básica del sistema nervioso. El cerebro humano contiene aproximadamente 
+                <strong>86,000 millones de neuronas</strong>, cada una conectada con otras miles mediante <strong>sinapsis</strong>. 
+                A diferencia de otras células, las neuronas están especializadas en recibir, procesar y transmitir información.
+            </p>
+
+            <div class="image-container">
+                <img src="images/neurona-ck12.png" alt="Estructura de una neurona: dendritas, cuerpo celular, núcleo, axón, terminal del axón, nódulo de Ranvier, vaina de mielina">
+            </div>
+            <p class="image-caption">Figura 1: Estructura de una neurona con sus partes principales etiquetadas. Fuente: CK-12 Foundation.</p>
+
+            <div class="image-container">
+                <img src="images/neurona-partes.png" alt="La neurona y sus partes: dendritas, soma, núcleo, axón, cono axónico, vaina de mielina, nódulo de Ranvier, botones sinápticos">
+            </div>
+            <p class="image-caption">Figura 2: Diagrama detallado de la neurona con botones sinápticos y nódulos de Ranvier. Fuente: NeuroMéxico.</p>
+
+            <div class="image-container">
+                <img src="images/neurona-wikipedia.png" alt="Neurona completa con detalle de sinapsis y estructura interna del axón">
+            </div>
+            <p class="image-caption">Figura 3: Neurona con ampliación de la sinapsis y estructura interna del axón. Fuente: Wikipedia.</p>
+
+            <h3>Partes de la Neurona</h3>
+
+            <div class="organ-grid">
+                <div class="organ-card">
+                    <h4>🌿 Dendritas</h4>
+                    <p>Prolongaciones ramificadas que <strong>reciben señales</strong> de otras neuronas. Su forma de árbol maximiza la superficie de contacto con otras células nerviosas.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🏠 Soma (Cuerpo Celular)</h4>
+                    <p>Contiene el <strong>núcleo</strong> y los orgánulos. Es la "fábrica" de la neurona, donde se sintetizan proteínas y neurotransmisores. Su diámetro varía entre 4 y 100 μm.</p>
+                </div>
+                <div class="organ-card">
+                    <h4>📡 Axón</h4>
+                    <p>Prolongación larga y única que <strong>transmite el impulso</strong> hacia otras neuronas. Puede medir desde micrómetros hasta más de un metro (como los que van de la médula espinal a los pies).</p>
+                </div>
+                <div class="organ-card">
+                    <h4>🧈 Vaina de Mielina</h4>
+                    <p>Capa de lípidos formada por células de Schwann (SNP) u oligodendrocitos (SNC). Actúa como <strong>aislante eléctrico</strong>, acelerando la transmisión del impulso hasta 100 veces.</p>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El <strong>axón más largo</strong> del cuerpo humano pertenece a la neurona que va desde la base de la columna vertebral hasta el dedo gordo del pie, midiendo aproximadamente <strong>1.2 metros</strong>. En una ballena azul, el nervio ciático puede superar los <strong>10 metros</strong> de longitud.</p>
+            </div>
+        </section>
+
+        <!-- POTENCIAL DE ACCIÓN -->
+        <section class="topic-section animate-on-scroll">
+            <h2>⚡ Potencial de Acción: La Chispa Eléctrica</h2>
+            <p>
+                El <strong>potencial de acción</strong> es el cambio rápido y transitorio del voltaje eléctrico a través 
+                de la membrana de una neurona. Es el mecanismo físico del impulso nervioso. Se genera gracias a 
+                <strong>canales iónicos</strong> (proteínas en la membrana) que permiten el paso selectivo de iones 
+                sodio (Na⁺) y potasio (K⁺).
+            </p>
+
+            <div class="image-container">
+                <img src="images/potencial-accion-kenhub.png" alt="Gráfica del potencial de acción mostrando fases: potencial de reposo, despolarización, pico, repolarización, hiperpolarización">
+            </div>
+            <p class="image-caption">Figura 4: Gráfica del potencial de acción con sus fases clave. Fuente: Kenhub.</p>
+
+            <div class="image-container">
+                <img src="images/potencial-accion-labster.png" alt="Potencial de acción con etiquetas: potencial de reposo -70mV, umbral -55mV, despolarización, repolarización, hiperpolarización">
+            </div>
+            <p class="image-caption">Figura 5: Potencial de acción detallado con valores de voltaje y flujo de iones. Fuente: Labster.</p>
+
+            <h3>Fases del Potencial de Acción</h3>
+
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>😴 Potencial de Reposo (-70 mV)</h4>
+                    <p>En estado de calma, la neurona mantiene una carga negativa en su interior gracias a la <strong>bomba Na⁺/K⁺-ATPasa</strong>, que expulsa 3 iones de sodio y introduce 2 de potasio. La membrana es impermeable al Na⁺ pero permeable al K⁺.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>📈 Despolarización (de -70 a +30 mV)</h4>
+                    <p>Un estímulo supera el <strong>umbral de excitación</strong> (-55 mV). Los <strong>canales de Na⁺ voltaje-dependientes</strong> se abren y entra una avalancha de iones sodio. La carga interna se vuelve positiva. Esta fase dura ~1 milisegundo.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>🎯 Pico (+30 mV)</h4>
+                    <p>El voltaje alcanza su máximo. Los canales de Na⁺ se <strong>inactivan</strong> (cierran) y los <strong>canales de K⁺</strong> comienzan a abrirse. Es el punto de no retorno: el impulso ya no puede detenerse.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>📉 Repolarización (regreso a -70 mV)</h4>
+                    <p>Los canales de K⁺ se abren completamente y el potasio sale masivamente de la célula, restaurando la carga negativa interna. Los canales de Na⁺ permanecen inactivos durante este tiempo.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>🌀 Hiperpolarización (hasta -90 mV)</h4>
+                    <p>Los canales de K⁺ tardan en cerrarse, permitiendo que salga demasiado potasio. La neurona queda temporalmente <strong>menos excitable</strong> que en reposo. Esto evita que el impulso viaje hacia atrás.</p>
+                </div>
+            </div>
+
+            <div class="speed-box">
+                <span class="speed-value">120 m/s</span>
+                <span class="speed-label">Velocidad máxima de un impulso nervioso en fibras mielinizadas gruesas</span>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El potencial de acción sigue el principio de <strong>"todo o nada"</strong>: si el estímulo no alcanza el umbral de -55 mV, no se genera impulso. Pero si lo alcanza, el impulso siempre tiene la misma intensidad, sin importar cuán fuerte sea el estímulo. La "intensidad" de una sensación se codifica por la <strong>frecuencia</strong> de los impulsos, no por su amplitud.</p>
+            </div>
+        </section>
+
+        <!-- CONDUCCIÓN NERVIOSA -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🏃 Conducción del Impulso: Saltando de Nodo en Nodo</h2>
+            <p>
+                En axones <strong>mielinizados</strong>, el impulso no viaja de forma continua. Gracias a los 
+                <strong>nódulos de Ranvier</strong> —pequeños espacios sin mielina entre las células de Schwann— 
+                el impulso "salta" de un nódulo al siguiente en un proceso llamado <strong>conducción saltatoria</strong>. 
+                Esto aumenta drásticamente la velocidad y reduce el gasto energético.
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Fibras Mielinizadas</th>
+                        <th>Fibras No Mielinizadas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Velocidad</strong></td>
+                        <td>12 - 120 m/s</td>
+                        <td>0.5 - 2 m/s</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diámetro del axón</strong></td>
+                        <td>Grueso (2-20 μm)</td>
+                        <td>Delgado (0.2-1 μm)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tipo de conducción</strong></td>
+                        <td>Saltatoria (nódulos de Ranvier)</td>
+                        <td>Continua</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ejemplos</strong></td>
+                        <td>Nervios motores, sensitivos</td>
+                        <td>Fibras del dolor visceral, sistema autónomo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Color (histología)</strong></td>
+                        <td>Blanco (mucha mielina)</td>
+                        <td>Gris (poca o ninguna mielina)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>La <strong>esclerosis múltiple</strong> es una enfermedad autoinmune en la que el sistema inmunitario ataca y destruye la vaina de mielina del SNC. Sin esta capa aislante, los impulsos nerviosos se ralentizan o se pierden, causando debilidad muscular, problemas de coordinación y alteraciones sensoriales. Curiosamente, el <strong>SNC puede regenerar algo de mielina</strong>, pero no lo suficiente para compensar el daño en esta enfermedad.</p>
+            </div>
+        </section>
+
+        <!-- SINAPSIS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🔗 La Sinapsis: De lo Eléctrico a lo Químico</h2>
+            <p>
+                Las neuronas no se tocan directamente. Entre el final de un axón y la dendrita de la siguiente neurona 
+                existe un espacio microscópico llamado <strong>hendidura sináptica</strong> (de 20-40 nanómetros). 
+                Para cruzar este espacio, el impulso eléctrico se convierte en un <strong>mensaje químico</strong>: 
+                los <strong>neurotransmisores</strong>.
+            </p>
+
+            <div class="image-container">
+                <img src="images/sinapsis-diagrama.png" alt="Sinapsis neuronal: botón presináptico, vesículas, neurotransmisores, espacio sináptico, neurona postsináptica, receptores">
+            </div>
+            <p class="image-caption">Figura 6: Estructura de la sinapsis química con sus componentes principales. Fuente: IES Abyla.</p>
+
+            <div class="image-container">
+                <img src="images/sinapsis-detalle.png" alt="Detalle de la sinapsis: vesículas con neurotransmisor, mitocondria, hendidura sináptica, receptores de célula postsináptica">
+            </div>
+            <p class="image-caption">Figura 7: Detalle del botón sináptico mostrando vesículas, mitocondrias y receptores. Fuente: Neuropediatra.</p>
+
+            <h3>Pasos de la Transmisión Sináptica</h3>
+
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>⚡ Llegada del Impulso</h4>
+                    <p>El potencial de acción llega al <strong>botón terminal</strong> (final del axón). La despolarización abre <strong>canales de Ca²⁺ voltaje-dependientes</strong> en la membrana presináptica.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>📦 Liberación de Neurotransmisores</h4>
+                    <p>La entrada de calcio provoca la <strong>fusión de vesículas sinápticas</strong> con la membrana, liberando neurotransmisores al espacio sináptico por <strong>exocitosis</strong>. Cada vesícula contiene ~10,000 moléculas.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>🔒 Unión a Receptores</h4>
+                    <p>Los neurotransmisores se unen a <strong>receptores específicos</strong> en la membrana postsináptica, como una llave en una cerradura. Esta unión abre canales iónicos, generando un <strong>potencial postsináptico</strong> (excitador o inhibidor).</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>🧹 Inactivación y Recaptación</h4>
+                    <p>Para evitar estimulación continua, los neurotransmisores son: <strong>degradados por enzimas</strong> (como la acetilcolinesterasa), <strong>recaptados</strong> por la neurona presináptica, o <strong>diluidos</strong> en el líquido intersticial. Este paso dura ~1-2 milisegundos.</p>
+                </div>
+            </div>
+
+            <h3>Principales Neurotransmisores</h3>
+            <div class="two-column">
+                <div>
+                    <ul>
+                        <li><strong>Acetilcolina (ACh):</strong> Contracción muscular, memoria, atención. Deficiencia en Alzheimer.</li>
+                        <li><strong>Dopamina:</strong> Placer, motivación, movimiento. Relacionada con Parkinson y adicciones.</li>
+                        <li><strong>Serotonina:</strong> Estado de ánimo, sueño, apetito. Relacionada con depresión.</li>
+                        <li><strong>Noradrenalina:</strong> Alerta, estrés, "lucha o huida".</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><strong>GABA:</strong> Principal neurotransmisor <strong>inhibidor</strong> del cerebro. Reduce la excitabilidad.</li>
+                        <li><strong>Glutamato:</strong> Principal neurotransmisor <strong>excitador</strong>. Aprendizaje y memoria.</li>
+                        <li><strong>Endorfinas:</strong> Analgésicos naturales. Producen sensación de bienestar.</li>
+                        <li><strong>Oxitocina:</strong> Vínculo social, confianza, parto y lactancia.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Una sola neurona puede formar hasta <strong>10,000 sinapsis</strong> con otras neuronas. El cerebro humano contiene aproximadamente <strong>100 billones (10¹⁴) de sinapsis</strong>. Si contaras una sinapsis por segundo, tardarías <strong>3 millones de años</strong> en contarlas todas. Esta complejidad es lo que permite el pensamiento, la creatividad y la conciencia.</p>
+            </div>
+        </section>
+
+        <!-- SISTEMA NERVIOSO -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🧬 El Sistema Nervioso: La Red de Control</h2>
+            <p>
+                El impulso nervioso no existe en el vacío. Es la herramienta de trabajo de un sistema vasto y complejo 
+                que coordina todas las funciones del cuerpo. El <strong>sistema nervioso</strong> se divide en dos grandes 
+                componentes que trabajan en conjunto.
+            </p>
+
+            <div class="two-column">
+                <div>
+                    <h3>🧠 Sistema Nervioso Central (SNC)</h3>
+                    <ul>
+                        <li><strong>Cerebro:</strong> Controla pensamiento, emociones, memoria, movimiento voluntario y funciones autónomas.</li>
+                        <li><strong>Cerebelo:</strong> Coordina el equilibrio, la postura y los movimientos finos.</li>
+                        <li><strong>Tronco encefálico:</strong> Regula funciones vitales: respiración, latido cardíaco, presión arterial.</li>
+                        <li><strong>Médula espinal:</strong> Conecta el cerebro con el resto del cuerpo. Reflejos espinales.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🌐 Sistema Nervioso Periférico (SNP)</h3>
+                    <ul>
+                        <li><strong>Nervios craneales (12 pares):</strong> Conectan el cerebro con cabeza, cuello y órganos sensoriales.</li>
+                        <li><strong>Nervios espinales (31 pares):</strong> Conectan la médula espinal con el resto del cuerpo.</li>
+                        <li><strong>Sistema somático:</strong> Controla músculos esqueléticos (movimiento voluntario).</li>
+                        <li><strong>Sistema autónomo:</strong> Controla órganos internos (involuntario): simpático ("lucha/huida") y parasimpático ("descanso/digestión").</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>⚡ Velocidades del Impulso en Diferentes Nervios</h4>
+                <p><strong>Nervio ciático (motor):</strong> ~120 m/s — el más rápido del cuerpo.<br><br>
+                <strong>Fibras de dolor rápido (Aδ):</strong> ~12-30 m/s — dolor agudo y localizado.<br><br>
+                <strong>Fibras de dolor lento (C):</strong> ~0.5-2 m/s — dolor difuso y persistente.<br><br>
+                <strong>Nervio óptico:</strong> ~3-6 m/s — transmisión visual.<br><br>
+                <strong>Nervio facial:</strong> ~20-30 m/s — expresiones faciales.</p>
+            </div>
+        </section>
+
+        <!-- ENFERMEDADES -->
+        <section class="topic-section animate-on-scroll">
+            <h2>⚠️ Cuando el Impulso Falla: Enfermedades del Sistema Nervioso</h2>
+            <p>
+                Alteraciones en la generación, conducción o transmisión del impulso nervioso causan algunas de las 
+                enfermedades más debilitantes. Comprender su base biológica es clave para el desarrollo de tratamientos.
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Enfermedad</th>
+                        <th>Alteración en el Impulso</th>
+                        <th>Síntomas Principales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Alzheimer</strong></td>
+                        <td>Muerte de neuronas colinérgicas; acumulación de placas amiloides</td>
+                        <td>Pérdida de memoria, confusión, cambios de personalidad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parkinson</strong></td>
+                        <td>Muerte de neuronas dopaminérgicas en la sustancia negra</td>
+                        <td>Temblor, rigidez, bradicinesia (lentitud de movimiento)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Esclerosis Múltiple</strong></td>
+                        <td>Destrucción de la vaina de mielina (despelininización)</td>
+                        <td>Debilidad, problemas de visión, espasticidad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Epilepsia</strong></td>
+                        <td>Descargas eléctricas anormales y descontroladas en el cerebro</td>
+                        <td>Convulsiones, pérdida de conciencia, aura</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Miastenia Gravis</strong></td>
+                        <td>Autoanticuerpos bloquean receptores de acetilcolina en la unión neuromuscular</td>
+                        <td>Debilidad muscular, ptosis (párpado caído), disfagia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Neuropatía Diabética</strong></td>
+                        <td>Daño por glucosa elevada a nervios periféricos (especialmente pies)</td>
+                        <td>Hormigueo, dolor ardiente, pérdida de sensibilidad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- DATOS CURIOSOS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🤯 Datos Curiosos sobre tu Sistema Nervioso</h2>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Tu cerebro genera aproximadamente <strong>20 vatios de energía eléctrica</strong> —suficiente para encender una bombilla LED pequeña. Aunque representa solo el 2% de tu peso corporal, consume el <strong>20% de la energía y el oxígeno</strong> de todo tu cuerpo.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>La <strong>señal más rápida</strong> que viaja por tu cuerpo no es el dolor: es el <strong>reflejo de estornudo</strong>, que involucra el nervio trigémino y puede alcanzar velocidades de ~150 m/s. Es tan rápido que tu cerebro ni siquiera tiene tiempo de "autorizarlo" —por eso no puedes evitar estornudar.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>El <strong>tiempo de reacción humano promedio</strong> a un estímulo visual es de <strong>250 milisegundos</strong>. De esos 250 ms, solo ~50 ms se dedican a que la luz viaje desde el ojo hasta el cerebro. El resto (~200 ms) es el tiempo que tu cerebro necesita para "procesar" la información y decidir una respuesta.</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>¿Sabías que...?</h4>
+                <p>Las <strong>medusas</strong> fueron los primeros animales en desarrollar un sistema nervioso hace ~700 millones de años. Sin embargo, no tienen cerebro: su sistema nervioso es una <strong>red difusa</strong> de neuronas distribuidas por todo el cuerpo. Aun así, pueden detectar luz, orientarse y cazar presas.</p>
+            </div>
+        </section>
+
+        <!-- MINI QUIZ -->
+        <section class="topic-section animate-on-scroll">
+            <h2>📝 Verifica tu Aprendizaje</h2>
+            <p>Responde estas preguntas para comprobar lo que has aprendido. (Las respuestas se mostrarán al hacer clic)</p>
+
+            <div class="quiz-preview">
+                <h4>1. ¿Qué iones entran masivamente a la neurona durante la despolarización?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Iones de sodio (Na⁺) — Correcto! Los canales de Na⁺ voltaje-dependientes se abren y una avalancha de sodio entra a la célula, invirtiendo la carga.'">A) Iones de sodio (Na⁺)</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Iones de potasio (K⁺) — Incorrecto. El potasio sale de la célula durante la repolarización, no entra durante la despolarización.'">B) Iones de potasio (K⁺)</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Iones de calcio (Ca²⁺) — Incorrecto. El calcio entra en el botón sináptico para liberar neurotransmisores, no durante la despolarización del axón.'">C) Iones de calcio (Ca²⁺)</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>2. ¿Qué estructura de la neurona recibe señales de otras neuronas?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Axón — Incorrecto. El axón transmite el impulso hacia otras neuronas, no lo recibe.'">A) Axón</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Dendritas — Correcto! Las dendritas son las prolongaciones ramificadas que reciben señales sinápticas de otras neuronas.'">B) Dendritas</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Vaina de mielina — Incorrecto. La vaina de mielina aísla y acelera la conducción, pero no recibe señales.'">C) Vaina de mielina</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>3. ¿Cuál es el potencial de reposo de una neurona típica?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ 0 mV — Incorrecto. 0 mV sería neutro; la neurona en reposo tiene carga negativa interna.'">A) 0 mV</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ +30 mV — Incorrecto. +30 mV es el pico del potencial de acción, no el reposo.'">B) +30 mV</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ -70 mV — Correcto! El potencial de reposo es aproximadamente -70 mV, mantenido por la bomba Na⁺/K⁺-ATPasa.'">C) -70 mV</button>
+            </div>
+
+            <div class="quiz-preview">
+                <h4>4. ¿Qué neurotransmisor está relacionado con el placer y la motivación?</h4>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ GABA — Incorrecto. GABA es el principal neurotransmisor inhibidor; reduce la excitabilidad neuronal.'">A) GABA</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(45,106,79,0.1)'; this.style.borderColor='var(--color-secundario)'; this.innerHTML='✅ Dopamina — Correcto! La dopamina regula el placer, la motivación y la recompensa. Su déficit causa Parkinson.'">B) Dopamina</button>
+                <button class="quiz-option" onclick="this.style.background='rgba(200,50,50,0.1)'; this.style.borderColor='#c83030'; this.innerHTML='❌ Glutamato — Incorrecto. El glutamato es el principal neurotransmisor excitador, clave para el aprendizaje pero no directamente para el placer.'">C) Glutamato</button>
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN ENTRE TEMAS -->
+        <section class="topic-section animate-on-scroll">
+            <h2>🔗 Continúa tu Aprendizaje</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <a href="temas.html" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion); border: 2px solid transparent;">
+                    <span style="color: var(--color-secundario); font-weight: 600; font-size: 0.9rem;">← Volver a</span>
+                    <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Todos los Temas</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem; margin: 0;">Explora las 6 áreas de biología disponibles.</p>
+                </a>
+                <a href="sistema-circulatorio.html" style="display: block; padding: 1.5rem; background: var(--color-fondo); border-radius: 12px; text-decoration: none; transition: var(--transicion); border: 2px solid transparent;">
+                    <span style="color: var(--color-secundario); font-weight: 600; font-size: 0.9rem;">← Tema anterior</span>
+                    <h4 style="color: var(--color-primario); margin: 0.3rem 0;">Sistema Circulatorio</h4>
+                    <p style="color: var(--color-texto-claro); font-size: 0.9rem; margin: 0;">El motor de la vida: corazón, sangre y vasos.</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Bio<span>Exploración</span></h3>
+                <p>Proyecto escolar de Biología del Colegio Santo Domingo de Guzmán.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="temas.html">Temas</a></li>
+                    <li><a href="laboratorios.html">Laboratorios</a></li>
+                    <li><a href="sobre.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Áreas</h4>
+                <ul>
+                    <li><a href="#">Cuerpo Humano</a></li>
+                    <li><a href="#">Plantas</a></li>
+                    <li><a href="#">Ecología</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 BioExploración. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
